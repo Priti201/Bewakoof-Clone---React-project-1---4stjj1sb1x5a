@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "bewakoof",
   "private": true,
   "version": "0.0.0",
@@ -23,4 +24,37 @@
     "eslint-plugin-react-refresh": "^0.4.4",
     "vite": "^5.0.0"
   }
+=======
+  "name": "react-18",
+  "version": "1.0.0",
+  "description": "React 18 template",
+  "keywords": [
+    "react 18",
+    "react",
+    "jsx",
+    "javascript"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.0"
+  },
+  "devDependencies": {
+    "@babel/runtime": "7.13.8",
+    "typescript": "4.1.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "cypress run  --headless --reporter mochawesome",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+>>>>>>> 610f3ba3e8e0aa04685b1b5674594d527cbda4ab
 }
