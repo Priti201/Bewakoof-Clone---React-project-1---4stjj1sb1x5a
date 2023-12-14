@@ -155,7 +155,7 @@
   flex-wrap: wrap;
   gap: 10px;
 }
-.multi-color-block div {
+.multi-color-block {
   height: 40px;
   width: 40px;
   border-radius: 50%;

@@ -193,6 +193,7 @@ const ProductInfo = ({ productDetails }) => {
   };
 
   // console.log('accessToken', accessToken);
+  console.log('product', productDetails)
   return (
     <div className="productinfo-wrapper">
       <ToastContainer/>
@@ -235,14 +236,7 @@ const ProductInfo = ({ productDetails }) => {
               <h5>COLOUR OPTIONS:</h5>&nbsp;&nbsp;&nbsp;
               <span>{productDetails?.color}</span>
             </div>
-            <div className="colour-container">
-              {colorShades.map((box, i) => {
-                return (
-                  <div className="multi-color-block" key={i}>
-                    <div style={{ backgroundColor: `${box?.color}` }}></div>
-                  </div>
-                );
-              })}
+            <div className="multi-color-block" style={{backgroundColor: `${productDetails?.color}`}}>
             </div>
             <div>
               <h2 className="select-size-title">Select Size</h2>
