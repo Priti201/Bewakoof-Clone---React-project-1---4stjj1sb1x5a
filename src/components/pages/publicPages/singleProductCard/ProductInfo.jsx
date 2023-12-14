@@ -285,16 +285,6 @@ const ProductInfo = ({ productDetails }) => {
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
                   <Accordion.Header className="accordion-title">
-                    <StarOutlineIcon className="accordion-icon" />
-                    <div className="accordion-subtitle">
-                      <p>Offers</p>
-                      <p>SAVE EXTRA WITH 0 OFFERS</p>
-                    </div>
-                  </Accordion.Header>
-                  <Accordion.Body></Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header className="accordion-title">
                     <ArticleOutlinedIcon className="accordion-icon" />
                     <div className="accordion-subtitle">
                       <p>Product Description</p>
@@ -305,7 +295,7 @@ const ProductInfo = ({ productDetails }) => {
                     {productDetails?.description}
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="2">
+                <Accordion.Item eventKey="1">
                   <Accordion.Header className="accordion-title">
                     <SwapHorizontalCircleOutlinedIcon className="accordion-icon" />
                     <div className="accordion-subtitle">
