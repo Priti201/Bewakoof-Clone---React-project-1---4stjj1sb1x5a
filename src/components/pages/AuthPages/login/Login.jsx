@@ -8,6 +8,7 @@ import axios from "axios";
 import { useBaseApi } from "../../../contextApi/BaseDomainContext";
 import "react-toastify/dist/ReactToastify.css";
 import { useAccessToken } from "../../../contextApi/AccessTokenContext";
+import { ToasterMessage } from "../../../../helper/toastHelper";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -49,13 +50,12 @@ const Login = () => {
 
         setAccessToken(accessToken);
 
-        toast.success("Login successful");
+        ToasterMessage("success", "Login successful");
 
         navigate("/");
-
       }
     } catch (e) {
-      console.log("error occured in login", e);
+      ToasterMessage("error", e.response.data.message);
     }
   };
 
@@ -69,7 +69,6 @@ const Login = () => {
   // console.log(loginData);
   return (
     <div className="login-container">
-
       <Container fluid>
         <Row>
           <Col md={7}>
@@ -106,9 +105,6 @@ const Login = () => {
                 </Button>
               </Form>
               <div className="options-container">
-                <div onClick={() => navigate("/ForgetPassword")}>
-                  Forgot Password
-                </div>
                 <div onClick={() => navigate("/Signup")}>
                   Dont have an account?
                 </div>

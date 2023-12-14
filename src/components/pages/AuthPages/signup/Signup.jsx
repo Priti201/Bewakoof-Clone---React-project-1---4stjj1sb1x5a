@@ -18,7 +18,7 @@ const Signup = () => {
   });
 
   const baseURL = useBaseApi();
-  const {setAccessToken}=  useAccessToken();
+  const { setAccessToken } = useAccessToken();
 
   const handleChange = (e) => {
     // console.log(e.target.value);
@@ -70,7 +70,7 @@ const Signup = () => {
         localStorage.setItem("userName", userName);
         setAccessToken(accessToken);
 
-        toast.success('Account created successfully');
+        toast.success("Account created successfully");
         navigate("/");
       }
     } catch (e) {
@@ -126,9 +126,6 @@ const Signup = () => {
                 </Button>
               </Form>
               <div className="options-container">
-                <div onClick={() => navigate("/ForgetPassword")}>
-                  Forgot Password
-                </div>
                 <div onClick={() => navigate("/Login")}>
                   Already have an account?
                 </div>
