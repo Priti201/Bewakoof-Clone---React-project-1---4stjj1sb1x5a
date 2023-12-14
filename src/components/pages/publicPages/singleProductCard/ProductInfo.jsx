@@ -96,25 +96,6 @@ const ProductInfo = ({ productDetails }) => {
   };
 
  
-  // const fetchingCartProducts = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       `${baseURL}/api/v1/ecommerce/cart`,
-  //       {
-  //         headers: {
-  //           projectId: "4stjj1sb1x5a",
-  //           Authorization:
-  //           `Bearer ${accessToken}`
-  //         },
-  //       }
-  //     );
-  //     // console.log(response.data.data.items);
-  //     setCartItems(response.data.data.items);
-  //   } catch (error) {
-  //     ToasterMessage('error', 'Something went wrong');
-  //   }
-    
-  // };
 
 
   // console.log(wishlistItems);
@@ -232,7 +213,7 @@ const ProductInfo = ({ productDetails }) => {
           <div className="details-container">
             <h3 className="brand-name">{productDetails?.brand}</h3>
             <h3 className="product-name">{productDetails?.name}</h3>
-            <div className="ratings">&#11088;{productDetails?.ratings}</div>
+            <div className="ratings">&#11088;{productDetails?.ratings.toFixed(2)}</div>
             
             <div className="price-section">
               <div className="selling-price">
