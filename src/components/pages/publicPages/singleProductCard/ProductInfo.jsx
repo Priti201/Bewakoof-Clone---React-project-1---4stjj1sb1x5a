@@ -18,7 +18,6 @@ import { useBaseApi } from "../../../contextApi/BaseDomainContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useCartItemsNumber } from "../../../contextApi/CartItemsNumberContext";
-import { ToastContainer, toast } from "react-toastify";
 import { useAccessToken } from "../../../contextApi/AccessTokenContext";
 import { ToasterMessage } from "../../../../helper/toastHelper";
 import { useCartItems } from "../../../contextApi/CartItemsContext";
@@ -196,7 +195,6 @@ const ProductInfo = ({ productDetails }) => {
   console.log('product', productDetails)
   return (
     <div className="productinfo-wrapper">
-      <ToastContainer/>
       <Row>
         <Col md={6} sm={12} className="product-gallery">
           <div>

@@ -9,7 +9,6 @@ import SearchInput from "./SearchInput";
 import Admin from "./Admin";
 import { useCartItemsNumber } from "../../contextApi/CartItemsNumberContext";
 import { useAccessToken } from "../../contextApi/AccessTokenContext";
-import { ToastContainer } from "react-bootstrap";
 
 const NavBar = ({ isSearching, setIsSearching }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -33,7 +32,6 @@ const NavBar = ({ isSearching, setIsSearching }) => {
 
   return (
     <div className="navbar-wrapper">
-      <ToastContainer/>
       <div className="navbar-container">
         <div className="navbar-left-items">
           <Link to="/">

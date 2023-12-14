@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useBaseApi } from "../../../contextApi/BaseDomainContext";
 import { useAccessToken } from "../../../contextApi/AccessTokenContext";
-import { ToastContainer, toast } from "react-toastify";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -81,7 +80,6 @@ const Signup = () => {
 
   return (
     <div className="signup-wrapper">
-      <ToastContainer/>
       <Container fluid>
         <Row>
           <Col md={7}>

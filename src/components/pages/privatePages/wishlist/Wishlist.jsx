@@ -9,7 +9,6 @@ import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 
 import "./Wishlist.css";
 import { useBaseApi } from "../../../contextApi/BaseDomainContext";
-import { ToastContainer, toast } from "react-toastify";
 import { useAccessToken } from "../../../contextApi/AccessTokenContext";
 import { ToasterMessage } from "../../../../helper/toastHelper";
 
@@ -136,7 +135,6 @@ const Wishlist = () => {
     }
     return (
       <div className="wishlist-wrapper">
-        <ToastContainer />
         <div className="wishlist-container">
           {wishlistItems?.map((item, index) => {
             return (

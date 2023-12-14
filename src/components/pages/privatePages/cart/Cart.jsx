@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 
 import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 
@@ -136,7 +135,6 @@ const Cart = () => {
   if (cartItems.length !== 0) {
     return (
       <Container className="cart-wrapper">
-        <ToastContainer />
         <div className="cart-mybag-removeAll-button-container">
           <p className="my-bag-text">
             <strong>My Bag</strong> {cartItems.length} item(s)
