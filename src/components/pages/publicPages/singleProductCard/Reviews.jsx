@@ -7,7 +7,6 @@ import { Rating } from "@mui/material";
 import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 
 import { Button, Form } from "react-bootstrap";
-import { ToastContainer, toast } from "react-toastify";
 import { useAccessToken } from "../../../contextApi/AccessTokenContext";
 import { useNavigate } from "react-router-dom";
 import { ToasterMessage } from "../../../../helper/toastHelper";
@@ -62,7 +61,16 @@ const Reviews = ({ productId }) => {
     // e.preventDefault();
     if (!accessToken) {
       navigate("/login");
-    } else {
+      return;
+    }
+    else{
+      if(reviewInput.ratings <= 0 || reviewInput.review === '')
+      {
+        ToasterMessage('info','Please complete the review');
+        return;
+      }
+    }
+    
       try {
         const response = await axios.post(
           `https://academics.newtonschool.co/api/v1/ecommerce/review/${productId}`,
@@ -88,7 +96,6 @@ const Reviews = ({ productId }) => {
         ToasterMessage('error',"Something went wrong");
       }
     }
-  };
   // console.log(productId);
 
   const handleRemoveReview = async (id) => {
@@ -162,6 +169,7 @@ const Reviews = ({ productId }) => {
                 min={0}
                 onChange={handleReviewChange}
                 name="ratings"
+                placeholder="Rate the product out of 5"
               />
             </Form.Group>
 
@@ -171,6 +179,7 @@ const Reviews = ({ productId }) => {
                 type="text"
                 onChange={handleReviewChange}
                 name="text"
+                placeholder="Enter a review"
               />
             </Form.Group>
 
@@ -180,7 +189,6 @@ const Reviews = ({ productId }) => {
           </Form>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

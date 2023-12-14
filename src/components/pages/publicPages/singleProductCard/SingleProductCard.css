@@ -350,8 +350,12 @@
 .adding-review-container input{
   padding: 15px;
 }
+.adding-review-container input::-webkit-input-placeholder{
+opacity: 0.5;
+}
 .review-delete-icon{
   font-size: 35px !important;
   border: 3px solid gray;
   border-radius: 50px;
+  cursor: pointer;
 }
