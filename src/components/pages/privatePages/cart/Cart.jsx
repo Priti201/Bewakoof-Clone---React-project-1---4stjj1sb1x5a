@@ -28,36 +28,8 @@ const Cart = () => {
   const {cartItems, setCartItems,totalPrice, setTotalPrice}= useCartItems();
   const { cartItemsNumber, setCartItemsNumber } = useCartItemsNumber();
 
-  // const accessToken = JSON.parse(localStorage.getItem("accessToken"));
-
-  // useEffect(()=>{
-  //   fetchingCart();
-  // },[]);
-
-  // const fetchingCart =async () => {
-  //   const cartData = await fetchingCartItems(accessToken);
-  //   if (cartData) {
-  //     setCartItems(cartData.cartItems);
-  //     setTotalPrice(cartData.totalPrice);
-  //   }
-  // }
-
-  // const fetchingCartItems = async () => {
-  //   const response = await axios.get(
-  //     "https://academics.newtonschool.co/api/v1/ecommerce/cart",
-  //     {
-  //       headers: {
-  //         projectId: "4stjj1sb1x5a",
-  //         Authorization: `Bearer ${accessToken}`,
-  //       },
-  //     }
-  //   );
-  //   // console.log(response.data);
-  //   if (response.status === 200) {
-  //     setCartItems(response.data.data.items);
-  //     setTotalPrice(response.data.data.totalPrice);
-  //   }
-  // };
+ 
+  
 
   const handleRemoveFromCart = async (id) => {
     // console.log(id);
@@ -131,7 +103,7 @@ const Cart = () => {
       ToasterMessage("error", error.message);
     }
   };
-  if(!accessToken)
+  if(accessToken === '')
   {
     navigate('/login');
     return;
