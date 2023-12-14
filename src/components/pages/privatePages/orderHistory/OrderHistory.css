@@ -48,6 +48,7 @@
 .order-item-image{
     width: 100px;
     border-radius: 15px;
+    cursor: pointer;
 }
 .order-item-details-container{
     display: flex;
