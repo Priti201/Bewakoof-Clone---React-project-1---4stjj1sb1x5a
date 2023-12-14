@@ -131,6 +131,11 @@ const Cart = () => {
       ToasterMessage("error", error.message);
     }
   };
+  if(!accessToken)
+  {
+    navigate('/login');
+    return;
+  }
 
   if (cartItems.length !== 0) {
     return (
