@@ -21,6 +21,7 @@ import { useCartItemsNumber } from "../../../contextApi/CartItemsNumberContext";
 import { useAccessToken } from "../../../contextApi/AccessTokenContext";
 import { ToasterMessage } from "../../../../helper/toastHelper";
 import { useCartItems } from "../../../contextApi/CartItemsContext";
+import { Typography } from "@mui/material";
 
 const ProductInfo = ({ productDetails }) => {
   // console.log(productDetails);
@@ -31,15 +32,13 @@ const ProductInfo = ({ productDetails }) => {
   const [addedToCart, setAddedToCart] = useState(false);
   // const {fetchingWishlistProducts} = wishlistProductsContext();
 
-  
-  
   const [wishlistItems, setWishlistItems] = useState(null);
   // const [cartItems, setCartItems] = useState(null);
   // const accessToken = JSON.parse(localStorage.getItem("accessToken"));
-  const {accessToken}= useAccessToken();
-  
-  const {cartItemsNumber, setCartItemsNumber} = useCartItemsNumber();
-  const{cartItems, setCartItems}= useCartItems();
+  const { accessToken } = useAccessToken();
+
+  const { cartItemsNumber, setCartItemsNumber } = useCartItemsNumber();
+  const { cartItems, setCartItems } = useCartItems();
 
   useEffect(() => {
     fetchingWishlistProducts();
@@ -48,7 +47,6 @@ const ProductInfo = ({ productDetails }) => {
   // useEffect(() => {
   //   fetchingCartProducts();
   // }, [addedToCart]);
-
 
   const images = [
     {
@@ -76,16 +74,12 @@ const ProductInfo = ({ productDetails }) => {
 
   const fetchingWishlistProducts = async () => {
     try {
-      const response = await axios.get(
-        `${baseURL}/api/v1/ecommerce/wishlist`,
-        {
-          headers: {
-            projectId: "4stjj1sb1x5a",
-            Authorization:
-            `Bearer ${accessToken}`
-          },
-        }
-      );
+      const response = await axios.get(`${baseURL}/api/v1/ecommerce/wishlist`, {
+        headers: {
+          projectId: "4stjj1sb1x5a",
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
 
       // console.log(response.data.data.items);
       setWishlistItems(response.data.data.items);
@@ -93,9 +87,6 @@ const ProductInfo = ({ productDetails }) => {
       console.log(e);
     }
   };
-
- 
-
 
   // console.log(wishlistItems);
   // fetchingWishlistProducts();
@@ -114,8 +105,7 @@ const ProductInfo = ({ productDetails }) => {
             headers: {
               projectId: "4stjj1sb1x5a",
               "Content-Type": "application/json",
-              Authorization:
-                `Bearer ${accessToken}`
+              Authorization: `Bearer ${accessToken}`,
             },
           }
         );
@@ -123,14 +113,14 @@ const ProductInfo = ({ productDetails }) => {
         console.log("response", response);
         if (response.status === 200) {
           setAddedToCart(true);
-          
-          ToasterMessage('success',response.data.message);
+
+          ToasterMessage("success", response.data.message);
           setCartItems(response.data.data.items);
           setCartItemsNumber(response.data.data.items.length);
         }
       }
     } catch (error) {
-      ToasterMessage('error' ,'Something went wrong');
+      ToasterMessage("error", "Something went wrong");
     }
   };
 
@@ -148,8 +138,7 @@ const ProductInfo = ({ productDetails }) => {
           {
             headers: {
               projectId: "4stjj1sb1x5a",
-              Authorization:
-              `Bearer ${accessToken}`
+              Authorization: `Bearer ${accessToken}`,
             },
           }
         );
@@ -157,11 +146,11 @@ const ProductInfo = ({ productDetails }) => {
         // console.log("response", response);
         if (response.status === 200) {
           setWishlisted(true);
-          ToasterMessage('success',response.data.message);
+          ToasterMessage("success", response.data.message);
         }
       }
     } catch (e) {
-      ToasterMessage('error',e.response.data.message);
+      ToasterMessage("error", e.response.data.message);
     }
   };
 
@@ -172,27 +161,25 @@ const ProductInfo = ({ productDetails }) => {
         {
           headers: {
             projectId: "4stjj1sb1x5a",
-            Authorization:
-            `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
             "Content-Type": "application/x-www-form-urlencoded",
           },
         }
       );
-  
+
       // console.log(response);
-  
+
       if (response.status === 200) {
         setWishlisted(false);
-        ToasterMessage('success',response.data.message);
+        ToasterMessage("success", response.data.message);
       }
     } catch (error) {
-      ToasterMessage('error','Something went wrong');
+      ToasterMessage("error", "Something went wrong");
     }
-    
   };
 
   // console.log('accessToken', accessToken);
-  console.log('product', productDetails)
+  console.log("product", productDetails);
   return (
     <div className="productinfo-wrapper">
       <Row>
@@ -212,8 +199,10 @@ const ProductInfo = ({ productDetails }) => {
           <div className="details-container">
             <h3 className="brand-name">{productDetails?.brand}</h3>
             <h3 className="product-name">{productDetails?.name}</h3>
-            <div className="ratings">&#11088;{productDetails?.ratings.toFixed(2)}</div>
-            
+            <div className="ratings">
+              &#11088;{productDetails?.ratings.toFixed(2)}
+            </div>
+
             <div className="price-section">
               <div className="selling-price">
                 <span>₹</span>
@@ -234,8 +223,10 @@ const ProductInfo = ({ productDetails }) => {
               <h5>COLOUR OPTIONS:</h5>&nbsp;&nbsp;&nbsp;
               <span>{productDetails?.color}</span>
             </div>
-            <div className="multi-color-block" style={{backgroundColor: `${productDetails?.color}`}}>
-            </div>
+            <div
+              className="multi-color-block"
+              style={{ backgroundColor: `${productDetails?.color}` }}
+            ></div>
             <div>
               <h2 className="select-size-title">Select Size</h2>
             </div>
@@ -249,35 +240,46 @@ const ProductInfo = ({ productDetails }) => {
               })}
             </div>
             <div className="button-wrapper">
-             
-                {cartItems
-                  ?.map((item) => item.product?._id)
-                  .includes(productDetails?._id) ? (
-                    <Button className="add-to-bag">
-                    <LocalMallTwoToneIcon />
-                    <span onClick={()=>{navigate('/cart')}}>GO TO BAG</span>
-                  </Button>
-                ) : (
-                  <Button className="add-to-bag">
-                    <LocalMallOutlinedIcon className="bag-icon" />
-                    <span onClick={handleAddItemToCart}>ADD TO BAG</span>
-                  </Button>
-                )}
-              
-                {/* checking if the product already exist in the wishlist */}
-                {wishlistItems
-                  ?.map((item) => item.products?._id)
-                  .includes(productDetails?._id) ? (
-                    <Button className="add-to-wishlist" onClick={handleRemoveFromWishlist}>
-                    <FavoriteIcon className="filled-heart-icon" />
-                    <span >WISHLISTED</span>
-                  </Button>
-                ) : (
-                  <Button className="add-to-wishlist" onClick={handleAddToWishlist}>
-                    <FavoriteBorderOutlinedIcon className="heart-icon" />
-                    <span >WISHLIST</span>
-                 </Button>
-                )}
+              {cartItems
+                ?.map((item) => item.product?._id)
+                .includes(productDetails?._id) ? (
+                <Button className="add-to-bag">
+                  <LocalMallTwoToneIcon />
+                  <span
+                    onClick={() => {
+                      navigate("/cart");
+                    }}
+                  >
+                    GO TO BAG
+                  </span>
+                </Button>
+              ) : (
+                <Button className="add-to-bag">
+                  <LocalMallOutlinedIcon className="bag-icon" />
+                  <span onClick={handleAddItemToCart}>ADD TO BAG</span>
+                </Button>
+              )}
+
+              {/* checking if the product already exist in the wishlist */}
+              {wishlistItems
+                ?.map((item) => item.products?._id)
+                .includes(productDetails?._id) ? (
+                <Button
+                  className="add-to-wishlist"
+                  onClick={handleRemoveFromWishlist}
+                >
+                  <FavoriteIcon className="filled-heart-icon" />
+                  <span>WISHLISTED</span>
+                </Button>
+              ) : (
+                <Button
+                  className="add-to-wishlist"
+                  onClick={handleAddToWishlist}
+                >
+                  <FavoriteBorderOutlinedIcon className="heart-icon" />
+                  <span>WISHLIST</span>
+                </Button>
+              )}
             </div>
             <div className="accordion-container">
               <Accordion defaultActiveKey="0">
@@ -290,7 +292,11 @@ const ProductInfo = ({ productDetails }) => {
                     </div>
                   </Accordion.Header>
                   <Accordion.Body className="accordion-body">
-                    {productDetails?.description}
+                    <Typography
+                      dangerouslySetInnerHTML={{
+                        __html: productDetails?.description,
+                      }}
+                    ></Typography>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
@@ -302,8 +308,10 @@ const ProductInfo = ({ productDetails }) => {
                     </div>
                   </Accordion.Header>
                   <Accordion.Body className="accordion-body">
-                    Easy returns upto 15 days of delivery. Exchange available on
-                    select pincodes
+                    <Typography>
+                      Easy returns upto 15 days of delivery. Exchange available
+                      on select pincodes
+                    </Typography>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
