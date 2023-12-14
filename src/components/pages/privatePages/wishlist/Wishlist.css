@@ -13,9 +13,10 @@
   gap: 50px;
   padding: 15px 0;
 }
-.wishlist-cross-icon{
-    position: absolute;
-    background-color: #c0c1c2;
+.wishlist-cross-icon {
+  position: absolute;
+  background-color: transparent;
+  color: inherit;
 }
 .wishlist-product-image {
   width: 200px;
@@ -72,12 +73,12 @@
   color: #207bb4;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
-.wishlist-add-to-bag:hover{
-    background-color: #e6e6e6 !important;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    color: black;
+.wishlist-add-to-bag:hover {
+  background-color: #e6e6e6 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  color: black;
 }
-.wishlist-remove-all-btn{
+.wishlist-remove-all-btn {
   font-size: 12px;
   display: flex;
   justify-content: space-around;
