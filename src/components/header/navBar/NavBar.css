@@ -1,10 +1,10 @@
-.navbar-wrapper{
+.navbar-wrapper {
   display: flex;
   width: 100%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #e5e5e5;
 }
 .navbar-container {
   display: flex;
@@ -51,7 +51,7 @@
   width: 85%;
   background-color: transparent;
 }
-.navbar-right-items{
+.navbar-right-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,32 +61,41 @@
   margin: 0;
 }
 
-.admin-dropdown{
+.admin-dropdown {
   width: fit-content !important;
   height: fit-content !important;
   background-color: white !important;
   color: black !important;
   z-index: 9;
 }
-.admin-dropdown-menu{
+.admin-dropdown-menu {
   background-color: rgb(227, 223, 223) !important;
   padding: 15px !important;
 }
-.admin-dropdown-menu a{
+.admin-dropdown-menu a {
   text-decoration: none;
   color: black;
-  font-style:oblique;
+  font-style: oblique;
   font-weight: 500;
   padding: 5px;
 }
 .admin-dropdown-menu a:hover{
-  background-color: gray ;
+  background-color: gray;
   color: whitesmoke;
-  }
-  .navbar-item{
-    position: relative;
-  }
-.navbar-cart-items-number{
+  cursor: pointer;
+}
+/* .admin-dropdown-menu :hover :first-child{
+  cursor: default;
+} */
+.user-name:hover{
+  cursor:default !important;
+  background-color: rgb(227, 223, 223) !important;
+  color: black !important;
+}
+.navbar-item {
+  position: relative;
+}
+.navbar-cart-items-number {
   position: absolute;
   right: 0;
   background-color: yellow;
@@ -95,18 +104,16 @@
   height: 15px;
   text-align: center;
 }
-@media only screen and (max-width: 1224px)
-{
-  .navbar-wrapper{
+@media only screen and (max-width: 1224px) {
+  .navbar-wrapper {
     align-items: normal;
   }
-  .navbar-container{
+  .navbar-container {
     width: 100%;
     padding: 0 25px;
   }
 }
-@media only screen and (max-width: 992px)
-{
+@media only screen and (max-width: 992px) {
   .navbar-left-items {
     display: none;
   }
@@ -117,19 +124,17 @@
     align-items: center;
     width: 8%;
   }
-  .admin-dropdown{
+  .admin-dropdown {
     display: none;
   }
 }
-@media only screen and (max-width: 668px)
-{
-  .navbar-search-section{
+@media only screen and (max-width: 668px) {
+  .navbar-search-section {
     width: 200px;
   }
 }
-@media only screen and (max-width: 448px)
-{
-  .navbar-search-section{
+@media only screen and (max-width: 448px) {
+  .navbar-search-section {
     width: 150px;
   }
 }

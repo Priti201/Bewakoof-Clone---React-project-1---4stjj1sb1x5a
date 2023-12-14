@@ -35,7 +35,7 @@ const Admin = () => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu className="admin-dropdown-menu">
-          <Dropdown.Item>Hi, {userName}</Dropdown.Item>
+          <Dropdown.Item className="user-name">Hi, {userName}</Dropdown.Item>
           <Dropdown.Item>
             <Link to="/account">My Account</Link>
           </Dropdown.Item>
