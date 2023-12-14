@@ -7,11 +7,9 @@ import ForgetPassword from "../components/pages/AuthPages/forget-password/Forget
 import Cart from "../components/pages/privatePages/cart/Cart";
 import Wishlist from "../components/pages/privatePages/wishlist/Wishlist";
 import SingleProductCard from "../components/pages/publicPages/singleProductCard/SingleProductCard";
-import Footer from "../components/footer/Footer";
 import Checkout from "../components/pages/privatePages/checkout/Checkout";
 import MyAccount from "../components/pages/privatePages/myAccount/MyAccount";
 import OrderHistory from "../components/pages/privatePages/orderHistory/OrderHistory";
-import UserProfile from "../components/pages/privatePages/userProfile/UserProfile";
 import SingleOrder from "../components/pages/privatePages/singleOrder/SingleOrder";
 import Error404 from "../components/pages/error/Error404";
 import OrderSuccess from "../components/pages/privatePages/orderSuccess/OrderSuccess";
@@ -38,7 +36,6 @@ const Routers = ({ isSearching, setIsSearching }) => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/account" element={<MyAccount />} />
         <Route path="/account/orders" element={<OrderHistory />} />
-        <Route path="/profile" element={<UserProfile/>}/>
         <Route path="/account/orders/:id" element={<SingleOrder />} />
         <Route path="/account/orders/ordersucces" element={<OrderSuccess/>}/>
         <Route path="*" element={<Error404/>}/>
