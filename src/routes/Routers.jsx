@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../components/home/Home";
 import Login from "../components/pages/AuthPages/login/Login";
 import Signup from "../components/pages/AuthPages/signup/Signup";
-import ForgetPassword from "../components/pages/AuthPages/forget-password/ForgetPassword";
 import Cart from "../components/pages/privatePages/cart/Cart";
 import Wishlist from "../components/pages/privatePages/wishlist/Wishlist";
 import SingleProductCard from "../components/pages/publicPages/singleProductCard/SingleProductCard";
@@ -29,7 +28,6 @@ const Routers = ({ isSearching, setIsSearching }) => {
         {/* <Route path="/MobileCovers" element={<MobileCover />} /> */}
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
-        <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/product/:id" element={<SingleProductCard />} />
