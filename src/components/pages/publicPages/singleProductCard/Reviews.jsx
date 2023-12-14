@@ -10,6 +10,7 @@ import { Button, Form } from "react-bootstrap";
 import { useAccessToken } from "../../../contextApi/AccessTokenContext";
 import { useNavigate } from "react-router-dom";
 import { ToasterMessage } from "../../../../helper/toastHelper";
+import { adjectives, animals, colors, names, uniqueNamesGenerator } from "unique-names-generator";
 
 const Reviews = ({ productId }) => {
   const navigate = useNavigate();
@@ -26,6 +27,12 @@ const Reviews = ({ productId }) => {
 
   const baseURL = useBaseApi();
 
+  const customConfig ={
+    dictionaries: [names, colors],
+    separator: ' ',
+    length: 2,
+    style: 'capital'
+  };
   // const accessToken = JSON.parse(localStorage.getItem("accessToken"));
   const { accessToken } = useAccessToken();
 
@@ -87,7 +94,7 @@ const Reviews = ({ productId }) => {
           }
         );
 
-        console.log(response);
+        // console.log(response);
         if (response.status === 201) {
          ToasterMessage('success',response.data.message);
           setFlagForRefresh(!flagForRefresh);
@@ -111,7 +118,7 @@ const Reviews = ({ productId }) => {
           },
         }
       );
-      console.log("response", response);
+      // console.log("response", response);
       if (response.status === 204) {
         ToasterMessage('success',"review deleted successfully");
         setFlagForRefresh(!flagForRefresh);
@@ -140,7 +147,7 @@ const Reviews = ({ productId }) => {
                 </div>
                 <div className="review-text">
                   {review.text}
-                  <div className="review-username">Bewakoof Fans</div>
+                  <div className="review-username">{uniqueNamesGenerator(customConfig)}</div>
                   <div className="review-date">2021-06-24</div>
                 </div>
               </div>
