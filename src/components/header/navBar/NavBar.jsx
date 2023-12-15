@@ -9,27 +9,30 @@ import SearchInput from "./SearchInput";
 import Admin from "./Admin";
 import { useCartItemsNumber } from "../../contextApi/CartItemsNumberContext";
 import { useAccessToken } from "../../contextApi/AccessTokenContext";
+import DropDown from "./DropDown";
 
 const NavBar = ({ isSearching, setIsSearching }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   // let accessToken = localStorage.getItem("accessToken");
   // const cartItemsNumber = localStorage.getItem('cartItems');
 
   const { cartItemsNumber, setCartItemsNumber } = useCartItemsNumber();
 
-  const {accessToken} = useAccessToken();
+  const { accessToken } = useAccessToken();
   // console.log('cartNumber',cartItemsNumber);
 
-
   // console.log('accessToken' ,accessToken);
-  
+
   const handleMenuBarClick = () => {
     setShowMenu(!showMenu);
     // console.log('clicked');
   };
-
+  const handleMouseOut=()=>{
+      setShowDropdown(false);
+  }
   return (
     <div className="navbar-wrapper">
       <div className="navbar-container">
@@ -41,17 +44,25 @@ const NavBar = ({ isSearching, setIsSearching }) => {
               className="logo"
             />
           </Link>
-          <Link to="/" className="navbar-item">
+          <Link
+            to="/"
+            className="navbar-item"
+            onMouseEnter={() => setShowDropdown(true)}
+            // onMouseLeave={handleMouseOut}
+          >
             MEN
           </Link>
-          <Link to="/" className="navbar-item">
+          <Link
+            to="/"
+            className="navbar-item"
+            onMouseEnter={() => setShowDropdown(true)}
+            // onMouseLeave={handleMouseOut}
+          >
             WOMEN
           </Link>
-          <Link to="/" className="navbar-item">
-            MOBILE COVERS
-          </Link>
-
-          {/* <NavBarRoutes/> */}
+          {showDropdown && (
+              <DropDown />
+          )}
         </div>
 
         <div className="mobile-screen-menu">
@@ -78,17 +89,17 @@ const NavBar = ({ isSearching, setIsSearching }) => {
           )}
 
           <Link
-            to={accessToken === '' ? "/login" : "/wishlist"}
+            to={accessToken === "" ? "/login" : "/wishlist"}
             className="navbar-item"
           >
             <FavoriteBorderIcon />
           </Link>
           <Link
-            to={accessToken === '' ? "/login" : "/cart"}
+            to={accessToken === "" ? "/login" : "/cart"}
             className="navbar-item"
           >
             <ShoppingBagOutlinedIcon />
-            {cartItemsNumber >0 &&  accessToken != '' && (
+            {cartItemsNumber > 0 && accessToken != "" && (
               <span className="navbar-cart-items-number">
                 {cartItemsNumber}
               </span>
