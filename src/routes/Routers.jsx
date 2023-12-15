@@ -12,6 +12,7 @@ import OrderHistory from "../components/pages/privatePages/orderHistory/OrderHis
 import SingleOrder from "../components/pages/privatePages/singleOrder/SingleOrder";
 import Error404 from "../components/pages/error/Error404";
 import OrderSuccess from "../components/pages/privatePages/orderSuccess/OrderSuccess";
+import CategoryProduct from "../components/pages/publicPages/categorieProducts/CategoryProduct";
 
 const Routers = ({ isSearching, setIsSearching }) => {
   return (
@@ -35,6 +36,7 @@ const Routers = ({ isSearching, setIsSearching }) => {
         <Route path="/account" element={<MyAccount />} />
         <Route path="/account/orders" element={<OrderHistory />} />
         <Route path="/account/orders/:id" element={<SingleOrder />} />
+        <Route path="/:category" element={< CategoryProduct/>} />
         <Route path="/account/orders/ordersucces" element={<OrderSuccess/>}/>
         <Route path="*" element={<Error404/>}/>
 
