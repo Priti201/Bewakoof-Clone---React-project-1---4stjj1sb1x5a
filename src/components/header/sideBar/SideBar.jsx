@@ -42,15 +42,6 @@ const SideBar = ({ handleMenuBarClick }) => {
           <Link to="/Women" className="link">
             Women
           </Link>
-          <Link to="/DesignsOfTheWeek" className="link">
-            Designs of the Week
-          </Link>
-          <Link to="/CustomiseYourOwnT-Shirt" className="link">
-            Customise your own T-Shirt
-          </Link>
-          <Link to="/MobileCovers" className="link">
-            Mobile Covers
-          </Link>
         </div>
         <h4 className="title">MY PROFILE</h4>
         <div className="sidebar-links">
@@ -72,9 +63,6 @@ const SideBar = ({ handleMenuBarClick }) => {
           </Link>
           <Link to="/FeedbackAndSuggestions" className="link">
             Feedback & Suggestions
-          </Link>
-          <Link to="/BecomeASeller" className="link">
-            Become a Seller
           </Link>
         </div>
 
