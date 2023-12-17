@@ -15,7 +15,7 @@ const NavBar = ({ isSearching, setIsSearching }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [gender, setGender]= useState('')
+  const [gender, setGender] = useState("");
 
   // let accessToken = localStorage.getItem("accessToken");
   // const cartItemsNumber = localStorage.getItem('cartItems');
@@ -31,11 +31,11 @@ const NavBar = ({ isSearching, setIsSearching }) => {
     setShowMenu(!showMenu);
     // console.log('clicked');
   };
-  const handleMouseIn = (gender) =>{
+  const handleMouseIn = (gender) => {
     setShowDropdown(true);
     setGender(gender);
-    console.log(gender);
-  }
+    // console.log(gender);
+  };
   const handleMouseOut = (e) => {
     setShowDropdown(false);
   };
@@ -51,23 +51,40 @@ const NavBar = ({ isSearching, setIsSearching }) => {
               className="logo"
             />
           </Link>
-          <Link
+          <div
+            className="menu"
+            onMouseEnter={handleMouseIn}
+            onMouseLeave={handleMouseOut}
+            // onClick={handleMouseIn}
+          >
+            <Link
+              to="/"
+              className="navbar-item"
+              // onMouseEnter={() => handleMouseIn("Men")}
+              // onMouseLeave={()=>handleMouseOut('men')}
+            >
+              MEN
+            </Link>
+            {showDropdown && <DropDown gender={gender} />}
+          </div>
+
+          {/* <Link
             to="/"
             className="navbar-item"
             onMouseEnter={()=>handleMouseIn('Men')}
             // onMouseLeave={()=>handleMouseOut('men')}
           >
             MEN
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             to="/"
             className="navbar-item"
             onMouseEnter={()=>handleMouseIn('Women')}
             // onMouseLeave={handleMouseOut}
           >
             WOMEN
-          </Link>
-          {showDropdown && <DropDown gender={gender}/>}
+          </Link> */}
+          {/* {showDropdown && <DropDown gender={gender}/>} */}
         </div>
 
         <div className="mobile-screen-menu">

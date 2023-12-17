@@ -54,20 +54,20 @@ const DropDown = ({gender}) => {
   if (gender === "Men") {
     return (
       <div className="categories-dropdown-wrapper">
-        <div className="categories-dropdown-container">
+        <ul className="categories-dropdown-container">
           {menCategories.map((category) => {
             return (
-              <div key={category}>
+              <li key={category}>
                 <Link
                   to={`/${gender}/${category}`}
                   className="categories-dropdown-link"
                 >
                   {category}
                 </Link>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     );
   }
