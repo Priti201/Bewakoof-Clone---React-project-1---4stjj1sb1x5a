@@ -12,13 +12,15 @@ const Card = ({product}) => {
     }
     // console.log(product);
   return (
+    <div className='card-wrapper'>
     <div className='card-container'>
-        <div className='product-card-img'>
+        <div className='product-card-img-container'>
        <Image
         src={product.displayImage}
         title={product.name}
         fluid
         onClick={handleImageClick}
+        className='product-card-img'
         />
        </div>
        <div className="product-card-detail">
@@ -39,6 +41,7 @@ const Card = ({product}) => {
             <div className="discount-percent">65% OFF</div>
         </div>
         </div>
+    </div>
     </div>
   )
 }
