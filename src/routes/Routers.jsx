@@ -36,7 +36,7 @@ const Routers = ({ isSearching, setIsSearching }) => {
         <Route path="/account" element={<MyAccount />} />
         <Route path="/account/orders" element={<OrderHistory />} />
         <Route path="/account/orders/:id" element={<SingleOrder />} />
-        <Route path="/:category" element={< CategoryProduct/>} />
+        <Route path="/:gender/:category" element={< CategoryProduct/>} />
         <Route path="/account/orders/ordersucces" element={<OrderSuccess/>}/>
         <Route path="*" element={<Error404/>}/>
 
