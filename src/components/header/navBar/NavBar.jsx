@@ -54,26 +54,9 @@ const NavBar = ({ isSearching, setIsSearching }) => {
               className="logo"
             />
           </Link>
-
-          {/* <Link
-            to="/"
-            className="navbar-item"
-            onClick={() => handleMenCategoriesClick("Men")}
-          >
-            MEN
-          {showMenDropdown && <DropDown gender={gender} />}
-          </Link> */}
+          
           <DropDown gender='Men'/>
 
-       
-          {/* <Link
-            to="/"
-            className="navbar-item"
-            onClick={()=>handleWomenCategoriesClick('Women')}
-          >
-            WOMEN
-          {showWomenDropdown && <DropDown gender={gender}/>}
-          </Link> */}
           <DropDown gender={'Women'}/>
         </div>
 
