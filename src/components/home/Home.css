@@ -17,7 +17,6 @@
 .designs-of-the-week-container img {
   display: inline-block;
   width: 50%;
-  height: 350px !important;
   cursor: pointer;
 }
 
