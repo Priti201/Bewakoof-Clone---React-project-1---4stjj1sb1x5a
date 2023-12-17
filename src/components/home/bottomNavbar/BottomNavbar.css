@@ -1,9 +1,15 @@
+.bottom-navbar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .bottom-navbar-list{
+    width: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
     height: 40px;
     font-size: 14px;
     background-color: #FFFFFF;
