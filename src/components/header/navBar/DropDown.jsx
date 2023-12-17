@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const DropDown = () => {
+const DropDown = ({gender}) => {
   const [categories, setCartegories] = useState([]);
   useEffect(() => {
     fetchingCartegories();
@@ -18,28 +18,80 @@ const DropDown = () => {
           },
         }
       );
-      console.log("categories", response.data.data);
+      // console.log("categories", response.data.data);
       setCartegories(response.data.data);
     } catch (error) {
       console.log(error);
     }
   };
-//   const handleCategoryClick = async (e)=>{
-//     const categoryName = e.target.value
-//   }
-  return (
-    <div className="categories-dropdown-wrapper">
-      <div className="categories-dropdown-container">
-        {categories.map((category) => {
-          return (
-            <div key={category}>
-              <Link to={`/${category}`}  className="categories-dropdown-link" >{category}</Link>
-            </div>
-          );
-        })}
+  //   const handleCategoryClick = async (e)=>{
+  //     const categoryName = e.target.value
+  //   }
+
+  const menCategories = [
+    "hoodie",
+    "jeans",
+    "jogger",
+    "kurta",
+    "pyjamas",
+    "shirt",
+    "shorts",
+    "sweater",
+    "tracksuit",
+    "trouser",
+    "tshirt",
+  ];
+  const womenCategories = [
+    "jeans",
+    "jogger",
+    "jumpsuit",
+    "kurti",
+    "shirt",
+    "tshirt",
+  ];
+  // const gender = "Women";
+  // console.log(gender);
+  if (gender === "Men") {
+    return (
+      <div className="categories-dropdown-wrapper">
+        <div className="categories-dropdown-container">
+          {menCategories.map((category) => {
+            return (
+              <div key={category}>
+                <Link
+                  to={`/${gender}/${category}`}
+                  className="categories-dropdown-link"
+                >
+                  {category}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+  else
+  {
+    return (
+      <div className="categories-dropdown-wrapper">
+        <div className="categories-dropdown-container">
+          {womenCategories.map((category) => {
+            return (
+              <div key={category}>
+                <Link
+                  to={`/${gender}/${category}`}
+                  className="categories-dropdown-link"
+                >
+                  {category}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 };
 
 export default DropDown;

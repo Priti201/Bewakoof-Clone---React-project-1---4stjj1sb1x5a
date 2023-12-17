@@ -15,6 +15,7 @@ const NavBar = ({ isSearching, setIsSearching }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [gender, setGender]= useState('')
 
   // let accessToken = localStorage.getItem("accessToken");
   // const cartItemsNumber = localStorage.getItem('cartItems');
@@ -30,9 +31,15 @@ const NavBar = ({ isSearching, setIsSearching }) => {
     setShowMenu(!showMenu);
     // console.log('clicked');
   };
-  const handleMouseOut=()=>{
-      setShowDropdown(false);
+  const handleMouseIn = (gender) =>{
+    setShowDropdown(true);
+    setGender(gender);
+    console.log(gender);
   }
+  const handleMouseOut = (e) => {
+    setShowDropdown(false);
+  };
+  console.log(gender);
   return (
     <div className="navbar-wrapper">
       <div className="navbar-container">
@@ -47,22 +54,20 @@ const NavBar = ({ isSearching, setIsSearching }) => {
           <Link
             to="/"
             className="navbar-item"
-            onMouseEnter={() => setShowDropdown(true)}
-            // onMouseLeave={handleMouseOut}
+            onMouseEnter={()=>handleMouseIn('Men')}
+            // onMouseLeave={()=>handleMouseOut('men')}
           >
             MEN
           </Link>
           <Link
             to="/"
             className="navbar-item"
-            onMouseEnter={() => setShowDropdown(true)}
+            onMouseEnter={()=>handleMouseIn('Women')}
             // onMouseLeave={handleMouseOut}
           >
             WOMEN
           </Link>
-          {showDropdown && (
-              <DropDown />
-          )}
+          {showDropdown && <DropDown gender={gender}/>}
         </div>
 
         <div className="mobile-screen-menu">
