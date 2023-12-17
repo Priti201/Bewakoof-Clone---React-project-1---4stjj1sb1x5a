@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useBaseApi } from "../../../contextApi/BaseDomainContext";
 import { useAccessToken } from "../../../contextApi/AccessTokenContext";
+import { toast } from "react-toastify";
+import { ToasterMessage } from "../../../../helper/toastHelper";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -70,11 +72,11 @@ const Signup = () => {
         localStorage.setItem("userName", userName);
         setAccessToken(accessToken);
 
-        toast.success("Account created successfully");
+        ToasterMessage('success',"Account created successfully");
         navigate("/");
       }
     } catch (e) {
-      console.log("error occured in login", e);
+      ToasterMessage('success',e)
     }
   };
 
