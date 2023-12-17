@@ -76,7 +76,8 @@ const Signup = () => {
         navigate("/");
       }
     } catch (e) {
-      ToasterMessage('success',e)
+      console.log(e);
+      ToasterMessage('error',e.response.data.message)
     }
   };
 
