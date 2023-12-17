@@ -31,6 +31,9 @@
 .trending-categories-container {
   display: flex;
   /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 .trending-categories-image {
   cursor: pointer;
