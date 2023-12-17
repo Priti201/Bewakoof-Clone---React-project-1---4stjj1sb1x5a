@@ -14,7 +14,8 @@ import DropDown from "./DropDown";
 const NavBar = ({ isSearching, setIsSearching }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showMenDropdown, setShowMenDropdown] = useState(false);
+  const [showWomenDropdown, setShowWomenDropdown] = useState(false);
   const [gender, setGender] = useState("");
 
   // let accessToken = localStorage.getItem("accessToken");
@@ -31,13 +32,15 @@ const NavBar = ({ isSearching, setIsSearching }) => {
     setShowMenu(!showMenu);
     // console.log('clicked');
   };
-  const handleMouseIn = (gender) => {
-    setShowDropdown(true);
+  const handleMenCategoriesClick = (gender) => {
+    setShowMenDropdown(!showMenDropdown);
     setGender(gender);
     // console.log(gender);
   };
-  const handleMouseOut = (e) => {
-    setShowDropdown(false);
+  const handleWomenCategoriesClick = (gender) => {
+    setShowWomenDropdown(!showWomenDropdown);
+    setGender(gender);
+    // console.log(gender);
   };
   console.log(gender);
   return (
@@ -51,40 +54,27 @@ const NavBar = ({ isSearching, setIsSearching }) => {
               className="logo"
             />
           </Link>
-          <div
-            className="menu"
-            onMouseEnter={handleMouseIn}
-            onMouseLeave={handleMouseOut}
-            // onClick={handleMouseIn}
-          >
-            <Link
-              to="/"
-              className="navbar-item"
-              // onMouseEnter={() => handleMouseIn("Men")}
-              // onMouseLeave={()=>handleMouseOut('men')}
-            >
-              MEN
-            </Link>
-            {showDropdown && <DropDown gender={gender} />}
-          </div>
 
           {/* <Link
             to="/"
             className="navbar-item"
-            onMouseEnter={()=>handleMouseIn('Men')}
-            // onMouseLeave={()=>handleMouseOut('men')}
+            onClick={() => handleMenCategoriesClick("Men")}
           >
             MEN
+          {showMenDropdown && <DropDown gender={gender} />}
           </Link> */}
+          <DropDown gender='Men'/>
+
+       
           {/* <Link
             to="/"
             className="navbar-item"
-            onMouseEnter={()=>handleMouseIn('Women')}
-            // onMouseLeave={handleMouseOut}
+            onClick={()=>handleWomenCategoriesClick('Women')}
           >
             WOMEN
+          {showWomenDropdown && <DropDown gender={gender}/>}
           </Link> */}
-          {/* {showDropdown && <DropDown gender={gender}/>} */}
+          <DropDown gender={'Women'}/>
         </div>
 
         <div className="mobile-screen-menu">
