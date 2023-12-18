@@ -8,8 +8,10 @@ import "./Home.css";
 import { Image } from "react-bootstrap";
 import TrendingCategories from "./trendingCategories/TrendingCategories";
 import Bestsellers from "./bestSellers/Bestsellers";
+import { useNavigate } from "react-router-dom";
 const Home = ({ isSearching, setIsSearching }) => {
   const { products, setProducts } = productsContext();
+  const navigate = useNavigate();
   return (
     <div className="home-container">
       {!isSearching ? (
@@ -20,6 +22,7 @@ const Home = ({ isSearching, setIsSearching }) => {
           <Image
             src="https://images.bewakoof.com/uploads/grid/app/Blockbuster-deal-thin-strip-Desktop-Joggers-under-999-1702050074.jpg"
             style={{ cursor: "pointer" }}
+            onClick={()=>navigate('/Men/jogger')}
           />
 
           <div className="designs-of-the-week-container">
