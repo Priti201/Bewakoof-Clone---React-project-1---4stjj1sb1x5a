@@ -42,7 +42,6 @@ const NavBar = ({ isSearching, setIsSearching }) => {
     setGender(gender);
     // console.log(gender);
   };
-  console.log(gender);
   return (
     <div className="navbar-wrapper">
       <div className="navbar-container">
