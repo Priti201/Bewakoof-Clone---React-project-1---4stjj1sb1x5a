@@ -25,6 +25,7 @@ const Card = ({product}) => {
         fluid
         onClick={handleImageClick}
         className='product-card-img'
+        loading='lazy'
         />
        </div>
        <div className="product-card-detail">
