@@ -10,13 +10,17 @@ const Card = ({product}) => {
     const handleImageClick=()=>{
          navigate(`/product/${product._id}`)
     }
+    const handleImageError =(event)=>{
+        event.target.src="https://images.bewakoof.com/t1080/men-s-checks-stylish-casual-evening-trackpant-351563-1656012838-1.jpg"
+    }
     // console.log(product);
   return (
     <div className='card-wrapper'>
     <div className='card-container'>
         <div className='product-card-img-container'>
        <Image
-        src={product.displayImage}
+        src={product.displayImage }
+        onError={handleImageError}
         title={product.name}
         fluid
         onClick={handleImageClick}
