@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -14,12 +14,21 @@ import appIosStore from "./../../assets/images/appIosStore.webp";
 import securePaymentsImg from "./../../assets/images/securePaymentsImg.webp";
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleClick =()=>{
+    if(location.pathname !== "/"){
+      navigate('/');
+    }
+    window.scrollTo({top:0, behavior:"smooth"})
+  }
   return (
     <div className="footer-wrapper">
       <Container className="footer-container">
         <Row className="row">
-          <Col xs={12} className="footer-logo">
-            <Link to="/">Bewakoof</Link>
+          <Col xs={12} className="footer-logo" onClick={handleClick}>
+            {/* <Link to="/">Bewakoof</Link> */}
+            Bewakoof
           </Col>
         </Row>
         <section>
