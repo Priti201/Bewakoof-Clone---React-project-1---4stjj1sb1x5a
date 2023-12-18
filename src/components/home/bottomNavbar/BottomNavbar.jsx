@@ -7,16 +7,16 @@ const BottomNavbar = () => {
     <div className='bottom-navbar'>
         <ul className='bottom-navbar-list'>
             <li>
-                <Link to='/' className='item'>WINTERWEAR</Link>
+                <Link to='/winterwear' className='item'>WINTERWEAR</Link>
             </li>
             <li>
-                <Link to='/' className='item'>MEN</Link>
+                <Link to='/men' className='item'>MEN</Link>
             </li>
             <li>
-                <Link to='/' className='item'>WOMEN</Link>
+                <Link to='/women' className='item'>WOMEN</Link>
             </li>
             <li>
-                <Link to='/' className='item'>PLUS SIZE</Link>
+                <Link to='/plus-size' className='item'>PLUS SIZE</Link>
             </li>
         </ul>
     </div>

@@ -13,6 +13,10 @@ import SingleOrder from "../components/pages/privatePages/singleOrder/SingleOrde
 import Error404 from "../components/pages/error/Error404";
 import OrderSuccess from "../components/pages/privatePages/orderSuccess/OrderSuccess";
 import CategoryProduct from "../components/pages/publicPages/categorieProducts/CategoryProduct";
+import Men from "../components/pages/publicPages/menProducts/Men";
+import Women from "../components/pages/publicPages/womenProducts/Women";
+import WinterWear from "../components/pages/publicPages/winterWearProducts/WinterWear";
+import PlusSize from "../components/pages/publicPages/plusSizeProducts/PlusSize";
 
 const Routers = ({ isSearching, setIsSearching }) => {
   return (
@@ -38,6 +42,10 @@ const Routers = ({ isSearching, setIsSearching }) => {
         <Route path="/account/orders/:id" element={<SingleOrder />} />
         <Route path="/:gender/:category" element={< CategoryProduct/>} />
         <Route path="/account/orders/ordersucces" element={<OrderSuccess/>}/>
+        <Route path="/men" element={<Men/>}/>
+        <Route path="/Women" element={<Women/>}/>
+        <Route path="/winterwear" element={<WinterWear/>}/>
+        <Route path="/plus-size" element={<PlusSize/>}/>
         <Route path="*" element={<Error404/>}/>
 
       </Routes>
