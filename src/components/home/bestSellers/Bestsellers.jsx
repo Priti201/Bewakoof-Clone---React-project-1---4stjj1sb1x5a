@@ -50,7 +50,14 @@ const Bestsellers = () => {
         ))}
       </ul> */}
       <Container className="bestsellers-container" fluid>
-      <ProductCard products={bestsellersProducts}/>
+      {/* <ProductCard products={bestsellersProducts}/> */}
+      {
+        bestsellersProducts.map((product)=>{
+          return(
+            <Card product={product}/>
+          )
+        })
+      }
       </Container>
       
     </div>
