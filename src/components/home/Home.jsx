@@ -2,13 +2,12 @@ import React from "react";
 import BottomNavbar from "./bottomNavbar/BottomNavbar";
 import Slider from "./slider/Slider";
 import FeaturedProducts from "./featuredProducts/FeaturedProducts";
-import ProductCard from "../productcard/ProductCard";
-import { productsContext } from "../contextApi/ProductsContext";
 import "./Home.css";
 import { Image } from "react-bootstrap";
-import TrendingCategories from "./trendingCategories/TrendingCategories";
 import Bestsellers from "./bestSellers/Bestsellers";
 import { useNavigate } from "react-router-dom";
+import TrendingCategoriesMen from "./trendingCategories/TrendingCategoriesMen";
+import TrendingCategoriesWomen from "./trendingCategories/TrendingCategoriesWomen";
 const Home = ({ isSearching, setIsSearching }) => {
   // const { products, setProducts } = productsContext();
   const navigate = useNavigate();
@@ -36,7 +35,8 @@ const Home = ({ isSearching, setIsSearching }) => {
           />
         </div>
 
-        <TrendingCategories />
+        <TrendingCategoriesMen />
+        <TrendingCategoriesWomen/>
         <Bestsellers />
         <div className="tribe-vote-banners">
           <Image
