@@ -140,6 +140,14 @@
   .navbar-search-section {
     width: 150px;
   }
+  .navbar-right-items {
+    gap: 4px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .navbar-search-section {
+    width: 70px;
+  }
 }
 .categories-dropdown {
   width: fit-content !important;
