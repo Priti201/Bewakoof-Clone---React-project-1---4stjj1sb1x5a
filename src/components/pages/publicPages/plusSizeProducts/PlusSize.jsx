@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useBaseApi } from "../../../contextApi/BaseDomainContext";
 import axios from "axios";
 import ProductCard from "../../../productcard/ProductCard";
+import { RingLoader } from "react-spinners";
 
 const PlusSize = () => {
   const baseURL = useBaseApi();
@@ -25,6 +26,24 @@ const PlusSize = () => {
       }
     } catch (error) {}
   };
+  if (plussizeProducts.length === 0) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+       <RingLoader
+      color={'#FEC001'}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+      size={100}
+    />
+  </div>
+    );
+  }
   return (
     <div>
       <ProductCard products={plussizeProducts} />

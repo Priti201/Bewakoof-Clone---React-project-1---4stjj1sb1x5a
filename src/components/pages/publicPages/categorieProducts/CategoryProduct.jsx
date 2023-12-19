@@ -3,18 +3,19 @@ import { useParams } from "react-router-dom";
 import { useBaseApi } from "../../../contextApi/BaseDomainContext";
 import axios from "axios";
 import ProductCard from "../../../productcard/ProductCard";
+import { RingLoader } from "react-spinners";
 
 const CategoryProduct = () => {
   const { category, gender } = useParams();
 
-  const [categoryProduct, setCategoryProduct]= useState([]);
+  const [categoryProduct, setCategoryProduct] = useState([]);
 
   const baseURL = useBaseApi();
 
   // console.log(category, gender);
   useEffect(() => {
     fetchingCategoriesItems();
-  }, [category,gender]);
+  }, [category, gender]);
 
   const fetchingCategoriesItems = async () => {
     const response = await axios.get(
@@ -26,15 +27,23 @@ const CategoryProduct = () => {
       }
     );
     // console.log(response);
-    if(response.status===200)
-    {
+    if (response.status === 200) {
       setCategoryProduct(response.data.data);
     }
   };
   console.log(categoryProduct);
-  return (
-    <ProductCard products={categoryProduct}/>
-  )
+  if (categoryProduct.length === 0) {
+    return (
+      <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <RingLoader
+          color={'black'}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      </div>
+    );
+  }
+  return <ProductCard products={categoryProduct} />;
 };
 
 export default CategoryProduct;
