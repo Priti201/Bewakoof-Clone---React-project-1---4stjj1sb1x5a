@@ -37,16 +37,16 @@ const Footer = () => {
               <span className="footer-title">CUSTOMER SERVICE</span>
               <ul>
                 <li>
-                  <Link to="">Contact us</Link>
+                  <Link to="/">Contact us</Link>
                 </li>
                 <li>
-                  <Link to="">Track Order</Link>
+                  <Link to="/account/orders">Track Order</Link>
                 </li>
                 <li>
-                  <Link to="">Return Order</Link>
+                  <Link to="/account/orders">Return Order</Link>
                 </li>
                 <li>
-                  <Link to="">Cancel Order</Link>
+                  <Link to="/account/orders">Cancel Order</Link>
                 </li>
               </ul>
             </Col>
@@ -54,16 +54,16 @@ const Footer = () => {
               <span className="footer-title">COMPANY</span>
               <ul>
                 <li>
-                  <Link to="">About us</Link>
+                  <Link to="/">About us</Link>
                 </li>
                 <li>
-                  <Link to="">We are Hiring</Link>
+                  <Link to="/">We are Hiring</Link>
                 </li>
                 <li>
-                  <Link to="">Terms & Conditions</Link>
+                  <Link to="/">Terms & Conditions</Link>
                 </li>
                 <li>
-                  <Link to="">Privacy Policy</Link>
+                  <Link to="/">Privacy Policy</Link>
                 </li>
               </ul>
             </Col>
@@ -71,25 +71,25 @@ const Footer = () => {
               <span className="footer-title">CONNECT WITH US</span>
               <ul>
                 <li>
-                  <Link to="">
+                  <Link to="/">
                     <FacebookIcon />
                     <span>4.7M People Like this</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="">
+                  <Link to="/">
                     <InstagramIcon />
                     <span>10.7M People Like this</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="">
+                  <Link to="/">
                     <TwitterIcon />
                     <span>5.7M People Like this</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="">
+                  <Link to="/">
                     <PinterestIcon />
                     <span>2.7M People Like this</span>
                   </Link>
@@ -134,10 +134,10 @@ const Footer = () => {
             <Col sm={4} md={3} className="menu-section">
               <span className="footer-title">DOWNLOAD THE APP</span>
               <div className="download-app">
-                <Link to="/">
+                <Link to="https://play.google.com/store/apps/details?id=com.beyoungapp&hl=en&gl=US&pli=1">
                   <Image src={appAndroidStore}  alt="appAndroidStore"fluid />
                 </Link>
-                <Link to="/">
+                <Link to="https://www.apple.com/app-store/">
                   <Image src={appIosStore} fluid alt="appIosStore" />
                 </Link>
               </div>
