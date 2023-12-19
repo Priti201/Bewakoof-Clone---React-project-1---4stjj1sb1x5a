@@ -77,7 +77,7 @@ const NavBar = ({ isSearching, setIsSearching }) => {
           {accessToken ? (
             <Admin />
           ) : (
-            <Link to="/Login" className="navbar-item">
+            <Link to="/login" className="navbar-item">
               Login
             </Link>
           )}

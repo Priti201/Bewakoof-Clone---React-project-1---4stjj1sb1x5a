@@ -80,7 +80,7 @@ const SideBar = ({ handleMenuBarClick }) => {
           {accessToken ? (
             <Link onClick={handleLogOut} className="link">Log out</Link>
           ) : (
-            <Link to="/Login" className="link">
+            <Link to="/login" className="link">
               Login
             </Link>
           )}

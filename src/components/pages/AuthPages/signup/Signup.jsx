@@ -129,7 +129,7 @@ const Signup = () => {
                 </Button>
               </Form>
               <div className="options-container">
-                <div onClick={() => navigate("/Login")}>
+                <div onClick={() => navigate("/login")}>
                   Already have an account?
                 </div>
               </div>
