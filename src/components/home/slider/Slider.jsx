@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Slider.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { Image } from "react-bootstrap";
 
 const Slider = () => {
   const images = [
@@ -12,26 +13,7 @@ const Slider = () => {
     "https://images.bewakoof.com/uploads/grid/app/NEW-1x1-KnitPerfection-sweater-common-1699625976.jpg",
   ];
 
-  const [current, setCurrent] = useState(0);
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % images.length);
-  };
-
-  //     useEffect(()=>{
-  //         const sliderinterval = setInterval(nextSlide, 3000);
-
-  //         return()=>{
-  //             clearInterval(sliderinterval);
-  //         }
-  //     }, [images])
-  //   return (
-  //     <div id='slider-container'>
-  //         <img src={images[current]}  className='slider-images'/>
-  //         <img src={images[current+1]} className='slider-images'/>
-  //         <img src={images[current+2]}  className='slider-images'/>
-  //     </div>
-  //   )
+ 
 
   const handleDragStart = (e) => {
     e.preventDefault();
@@ -70,17 +52,23 @@ const Slider = () => {
         "https://images.bewakoof.com/uploads/grid/app/NEW-1x1-KnitPerfection-sweater-common-1699625976.jpg",
     },
   ];
+  function Tile({ onClick }) {
+    return (
+      <div onClick={onClick} tabIndex={0} role="button" />
+    );
+  }
   return (
     <div className="slider-container">
       <AliceCarousel
         mouseTracking
         items={items.map((item) => (
           <div key={item.key} >
-            <img
+            <Image
               src={item.imageSrc}
               onDragStart={handleDragStart}
               role="presentation"
               className="slider-images"
+              onClick={()=>alert('hello alice')}
             />
           </div>
         ))}
