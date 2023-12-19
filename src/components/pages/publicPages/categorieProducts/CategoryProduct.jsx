@@ -36,7 +36,7 @@ const CategoryProduct = () => {
     return (
       <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
         <RingLoader
-          color={'black'}
+          color={'#FEC001'}
           aria-label="Loading Spinner"
           data-testid="loader"
         />
