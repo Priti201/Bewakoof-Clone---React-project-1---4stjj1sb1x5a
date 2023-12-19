@@ -77,7 +77,7 @@ const Cart = () => {
       }
     } catch (e) {
       // toast.error(e.response.data.message);
-      ToasterMessage("error", e.response.data.message);
+      ToasterMessage("info", e.response.data.message);
     }
   };
   // console.log(totalPrice);
