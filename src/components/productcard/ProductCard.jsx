@@ -7,7 +7,12 @@ const ProductCard = ({products}) => {
     // console.log('products' ,products)
     const param = useLocation();
     const title = param.pathname.replace("/","")
-    console.log(title);
+    // console.log(title);
+    console.log(products);
+    if(products.length === 0)
+    {
+      return<div>no result found</div>
+    }
   return (
 
     <>
