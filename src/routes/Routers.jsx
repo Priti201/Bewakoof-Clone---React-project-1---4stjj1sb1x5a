@@ -35,7 +35,7 @@ const Routers = ({ isSearching, setIsSearching }) => {
         {/* <Route path="/MobileCovers" element={<MobileCover />} /> */}
         <Route path="/:searchTerm" element={<SearchDisplay />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/product/:id" element={<SingleProductCard />} />
