@@ -8,15 +8,15 @@ import { ToasterMessage } from "../../../helper/toastHelper";
 
 const SideBar = ({ handleMenuBarClick }) => {
   // const accessToken = localStorage.getItem("accessToken");
-  const {accessToken, setAccessToken} = useAccessToken();
+  const { accessToken, setAccessToken } = useAccessToken();
   const userName = localStorage.getItem("userName");
 
   const handleLogOut = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("userName");
-    setAccessToken('');
+    setAccessToken("");
 
-    ToasterMessage('success','Logout successfull');
+    ToasterMessage("success", "Logout successfull");
   };
 
   return (
@@ -54,31 +54,10 @@ const SideBar = ({ handleMenuBarClick }) => {
           <Link to="/wishlist" className="link">
             My Wishlist
           </Link>
-        </div>
-
-        <h4 className="title">CONTACT US</h4>
-        <div className="sidebar-links">
-          <Link to="/HelpAndSupport" className="link">
-            Help & Support
-          </Link>
-          <Link to="/FeedbackAndSuggestions" className="link">
-            Feedback & Suggestions
-          </Link>
-        </div>
-
-        <h4 className="title">ABOUT US</h4>
-        <div className="sidebar-links">
-          <Link to="/OurStory" className="link">
-            Our Story
-          </Link>
-          <Link to="/Fanbook" className="link">
-            Fanbook
-          </Link>
-          <Link to="/Blog" className="link">
-            Blog
-          </Link>
           {accessToken ? (
-            <Link onClick={handleLogOut} className="link">Log out</Link>
+            <Link onClick={handleLogOut} className="link">
+              Log out
+            </Link>
           ) : (
             <Link to="/login" className="link">
               Login
