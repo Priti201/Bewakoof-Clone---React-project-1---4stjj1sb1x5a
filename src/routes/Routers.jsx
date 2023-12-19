@@ -33,8 +33,8 @@ const Routers = ({ isSearching, setIsSearching }) => {
         {/* <Route path="/Men" element={<Men />} />
       <Route path="/Women" element={<Women />} /> */}
         {/* <Route path="/MobileCovers" element={<MobileCover />} /> */}
-        <Route path="/:searchTerm" element={<SearchDisplay/>}/>
-        <Route path="/Login" element={<Login />} />
+        <Route path="/:searchTerm" element={<SearchDisplay />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
@@ -43,14 +43,13 @@ const Routers = ({ isSearching, setIsSearching }) => {
         <Route path="/account" element={<MyAccount />} />
         <Route path="/account/orders" element={<OrderHistory />} />
         <Route path="/account/orders/:id" element={<SingleOrder />} />
-        <Route path="/:gender/:category" element={< CategoryProduct/>} />
-        <Route path="/account/orders/ordersucces" element={<OrderSuccess/>}/>
-        <Route path="/men" element={<Men/>}/>
-        <Route path="/Women" element={<Women/>}/>
-        <Route path="/winterwear" element={<WinterWear/>}/>
-        <Route path="/plus-size" element={<PlusSize/>}/>
-        <Route path="*" element={<Error404/>}/>
-
+        <Route path="/:gender/:category" element={<CategoryProduct />} />
+        <Route path="/account/orders/ordersucces" element={<OrderSuccess />} />
+        <Route path="/men" element={<Men />} />
+        <Route path="/Women" element={<Women />} />
+        <Route path="/winterwear" element={<WinterWear />} />
+        <Route path="/plus-size" element={<PlusSize />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );
