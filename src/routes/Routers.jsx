@@ -17,6 +17,8 @@ import Men from "../components/pages/publicPages/menProducts/Men";
 import Women from "../components/pages/publicPages/womenProducts/Women";
 import WinterWear from "../components/pages/publicPages/winterWearProducts/WinterWear";
 import PlusSize from "../components/pages/publicPages/plusSizeProducts/PlusSize";
+import ProductCard from "../components/productcard/ProductCard";
+import SearchDisplay from "../components/header/navBar/SearchDisplay";
 
 const Routers = ({ isSearching, setIsSearching }) => {
   return (
@@ -31,6 +33,7 @@ const Routers = ({ isSearching, setIsSearching }) => {
         {/* <Route path="/Men" element={<Men />} />
       <Route path="/Women" element={<Women />} /> */}
         {/* <Route path="/MobileCovers" element={<MobileCover />} /> */}
+        <Route path="/:searchTerm" element={<SearchDisplay/>}/>
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
