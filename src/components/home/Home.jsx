@@ -14,30 +14,41 @@ const Home = ({ isSearching, setIsSearching }) => {
   const navigate = useNavigate();
   return (
     <div className="home-container">
-   
-        <>
-          <BottomNavbar />
-          <Slider />
-          <FeaturedProducts />
+      <>
+        <BottomNavbar />
+        <Slider />
+        <FeaturedProducts />
+        <Image
+          src="https://images.bewakoof.com/uploads/grid/app/Blockbuster-deal-thin-strip-Desktop-Joggers-under-999-1702050074.jpg"
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/Men/jogger")}
+        />
+
+        <div className="designs-of-the-week-container">
+          <h6>Designs of the week</h6>
           <Image
-            src="https://images.bewakoof.com/uploads/grid/app/Blockbuster-deal-thin-strip-Desktop-Joggers-under-999-1702050074.jpg"
-            style={{ cursor: "pointer" }}
-            onClick={()=>navigate('/Men/jogger')}
+            src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Slice-1-1701769393.jpg"
+            onClick={() => navigate("/men")}
           />
+          <Image
+            src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Slice-2-1701769392.jpg"
+            onClick={() => navigate("/women")}
+          />
+        </div>
 
-          <div className="designs-of-the-week-container">
-            <h6>Designs of the week</h6>
-            <Image src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Slice-1-1701769393.jpg" />
-            <Image src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Slice-2-1701769392.jpg" />
-          </div>
-
-          <TrendingCategories/>
-          <Bestsellers/>
-          <div className="tribe-vote-banners">
-            <Image src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1672040129.jpg" fluid/>
-            <Image src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1669022420.jpg" fluid/>
-          </div>
-        </>
+        <TrendingCategories />
+        <Bestsellers />
+        <div className="tribe-vote-banners">
+          <Image
+            src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1672040129.jpg"
+            fluid
+          />
+          <Image
+            src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1669022420.jpg"
+            fluid
+          />
+        </div>
+      </>
     </div>
   );
 };
