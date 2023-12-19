@@ -3,9 +3,11 @@ import { useBaseApi } from "../../../contextApi/BaseDomainContext";
 import axios from "axios";
 import ProductCard from "../../../productcard/ProductCard";
 import { RingLoader } from "react-spinners";
+import { ToasterMessage } from "../../../../helper/toastHelper";
 
 const Men = () => {
   const [mensProducts, setMensProducts] = useState([]);
+  const [loading, setLoading]= useState(true);
   useEffect(() => {
     fetchingMensProducts();
   }, []);
@@ -23,12 +25,16 @@ const Men = () => {
       console.log(response);
       if(response.status === 200)
       {
-        setMensProducts(response.data.data)
+        setMensProducts(response.data.data);
+        setLoading(false);
       }
-    } catch (error) {}
-  };
-
-  if(mensProducts.length===0)
+    } catch (error) {
+      // ToasterMessage('error',error)
+      console.log(error);
+      setLoading(false);
+    }
+  }
+  if(loading)
   {
     return <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
     <RingLoader
