@@ -32,14 +32,20 @@ li{
 }
 @media only screen and (max-width: 990px)
 {
-    .bottom-navbar-list{
+    /* .bottom-navbar-list{
         font-size: 80%;
+    } */
+    .item{
+        font-size: 14px ;
     }
 }
 @media only screen and (max-width: 880px)
 {
     .bottom-navbar-list{
         font-size: 70%;
+    }
+    .item{
+        font-size: 12px ;
     }
 }
 @media only screen and (max-width: 800px)
@@ -58,7 +64,13 @@ li{
 }
 @media only screen and (max-width: 480px)
 {
-    .bottom-navbar-list{
-        font-size: 35%;
+    .item{
+        font-size: 9px ;
+    }
+}
+@media only screen and (max-width: 280px)
+{
+    .item{
+        font-size: 7px ;
     }
 }
