@@ -15,6 +15,7 @@ const SearchInput = ({ isSearching, setIsSearching }) => {
 
   const baseApi = useBaseApi();
 
+  const navigate = useNavigate();
   useEffect(() => {
     const timeOutData = setTimeout(() => {
       fetchingProducts();
@@ -27,6 +28,7 @@ const SearchInput = ({ isSearching, setIsSearching }) => {
       // If the search query is empty, clear the results and return
       setIsSearching(false);
       setProducts([]);
+      navigate('/')
       return;
     }
 
@@ -44,7 +46,12 @@ const SearchInput = ({ isSearching, setIsSearching }) => {
       const result = await response.json();
       console.log("response", result);
 
-      setProducts(result.data);
+      if(response.status===200)
+      {
+
+        setProducts(result.data);
+      }
+      navigate(`/${searchTerm}`)
 
       //  console.log("response", result.data);
       // console.log('products', products);

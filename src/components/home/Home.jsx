@@ -10,11 +10,11 @@ import TrendingCategories from "./trendingCategories/TrendingCategories";
 import Bestsellers from "./bestSellers/Bestsellers";
 import { useNavigate } from "react-router-dom";
 const Home = ({ isSearching, setIsSearching }) => {
-  const { products, setProducts } = productsContext();
+  // const { products, setProducts } = productsContext();
   const navigate = useNavigate();
   return (
     <div className="home-container">
-      {!isSearching ? (
+   
         <>
           <BottomNavbar />
           <Slider />
@@ -38,9 +38,6 @@ const Home = ({ isSearching, setIsSearching }) => {
             <Image src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1669022420.jpg" fluid/>
           </div>
         </>
-      ) : (
-        <ProductCard products={products} />
-      )}
     </div>
   );
 };
