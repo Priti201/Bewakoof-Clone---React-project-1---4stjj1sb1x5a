@@ -30,6 +30,7 @@ const ProductInfo = ({ productDetails }) => {
   const navigate = useNavigate();
   const [wishlisted, setWishlisted] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [size, setSize]= useState('');
   // const {fetchingWishlistProducts} = wishlistProductsContext();
 
   const [wishlistItems, setWishlistItems] = useState(null);
@@ -91,6 +92,11 @@ const ProductInfo = ({ productDetails }) => {
   // console.log(wishlistItems);
   // fetchingWishlistProducts();
   const handleAddItemToCart = async () => {
+    if(size==='')
+    {
+      ToasterMessage('info','Please select a size');
+      return;
+    }
     try {
       if (accessToken === null) {
         navigate("/login");
@@ -99,7 +105,7 @@ const ProductInfo = ({ productDetails }) => {
           `https://academics.newtonschool.co/api/v1/ecommerce/cart/${productDetails._id}`,
           {
             quantity: 1,
-            size: "S",
+            size: `${size}`,
           },
           {
             headers: {
@@ -110,7 +116,7 @@ const ProductInfo = ({ productDetails }) => {
           }
         );
 
-        console.log("response", response);
+        // console.log("response", response);
         if (response.status === 200) {
           setAddedToCart(true);
 
@@ -178,8 +184,12 @@ const ProductInfo = ({ productDetails }) => {
     }
   };
 
+  const handleSizeChange = (size)=>{
+    // console.log(size);
+    setSize(size);
+  }
   // console.log('accessToken', accessToken);
-  console.log("product", productDetails);
+  // console.log("product", productDetails);
   return (
     <div className="productinfo-wrapper">
       <Row>
@@ -233,7 +243,7 @@ const ProductInfo = ({ productDetails }) => {
             <div className="size-container">
               {productDetails?.size?.map((item, i) => {
                 return (
-                  <div key={i} className="size-item">
+                  <div key={i} className="size-item" onClick={()=>handleSizeChange(item)}>
                     {item}
                   </div>
                 );
