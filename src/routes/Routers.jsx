@@ -1,5 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+
+
 import Home from "../components/home/Home";
 import Login from "../components/pages/AuthPages/login/Login";
 import Signup from "../components/pages/AuthPages/signup/Signup";
@@ -17,8 +19,10 @@ import Men from "../components/pages/publicPages/menProducts/Men";
 import Women from "../components/pages/publicPages/womenProducts/Women";
 import WinterWear from "../components/pages/publicPages/winterWearProducts/WinterWear";
 import PlusSize from "../components/pages/publicPages/plusSizeProducts/PlusSize";
-import ProductCard from "../components/productcard/ProductCard";
 import SearchDisplay from "../components/header/navBar/SearchDisplay";
+import NewArrivals from "../components/home/featuredProducts/NewArrivals";
+import BestsellerFeaturesCategories from "../components/home/featuredProducts/BestsellerFeaturesCategories,=";
+import Trending from "../components/home/featuredProducts/Trending";
 
 const Routers = ({ isSearching, setIsSearching }) => {
   return (
@@ -46,6 +50,10 @@ const Routers = ({ isSearching, setIsSearching }) => {
         <Route path="/women" element={<Women />} />
         <Route path="/winterwear" element={<WinterWear />} />
         <Route path="/plus-size" element={<PlusSize />} />
+        <Route path="/newArrivals" element={<NewArrivals />} />
+        <Route path="/bestseller" element={<BestsellerFeaturesCategories />} />
+        <Route path="/trending" element={<Trending/>} />
+
         <Route path="*" element={<Error404 />} />
       </Routes>
     </div>

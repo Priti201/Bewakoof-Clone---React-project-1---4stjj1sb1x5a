@@ -11,43 +11,52 @@ import couponoffers from "./../../../assets/images/couponoffers.png";
 import vote from "./../../../assets/images/vote.png";
 import plussize from "./../../../assets/images/plussize.png";
 import lastsizeleft from "./../../../assets/images/lastsizeleft.png";
+import { useNavigate } from "react-router-dom";
 
-const featuredProducts = {
-  "New Arrivals": newArrivals,
-  Bestsellers: bestsellers,
-  Winterwear: winterwear,
-  "Official Collaborations": officialcollaborations,
-  Customization: customization,
-  Combos: combos,
-  "Coupon Offers": couponoffers,
-  "Vote for Designs": vote,
-  "Plus Size": plussize,
-  "Last Sizes Left": lastsizeleft,
-};
 
-//   const featuredProducts = [
-//     {'New Arrivals': './src/assets/images/newarrivals.png'},
-//     {'Bestsellers': './src/assets/images/bestsellers.png'},
-//     {'Winterwear': './src/assets/images/winterwear.png'},
-//     {'Official Collaborations': './src/assets/images/officialcollaborations.png'},
-//     {'Customization': './src/assets/images/customization.png'},
-//     {'Combos': './src/assets/images/combos.gif'},
-//     {'Coupon Offers': './src/assets/images/couponoffers.png'},
-//     {'Vote for Designs': './src/assets/images/vote.png'},
-//     {'Plus Size': './src/assets/images/plussize.png'},
-//     {'Last Sizes Left': './src/assets/images/lastsizeleft.png'}
-// ]
 
+const featuredProducts = [
+  {
+    title: "New Arrivals",
+    src: newArrivals,
+    onClick: "newArrivals",
+  },
+  { title: "Bestsellers", src: bestsellers, onClick: "/bestseller" },
+  { title: "Winterwear", src: winterwear, onClick: "/winterwear" },
+  {
+    title: "Trending",
+    src: combos,
+    onClick: "/trending",
+  },
+  { title: "Tshirts", src: customization, onClick: "/Men/tshirt" },
+  { title: "Plus Size", src: plussize, onClick: "/plus-size" },
+];
 const FeaturedProducts = () => {
+  const navigate = useNavigate();
   return (
     <div className="features-wrapper">
       <div className="features-container">
-        <ul className="features-list">
+        {/* <ul className="features-list">
           {Object.entries(featuredProducts).map(([key, value]) => (
             <li className="featured-product" key={key}>
               <div className="slider-inner">
                 <Image src={value} alt={key} className="slider-image" />
                 <p>{key}</p>
+              </div>
+            </li>
+          ))}
+        </ul> */}
+        <ul className="features-list">
+          {featuredProducts.map((item) => (
+            <li className="featured-product" key={item.title}>
+              <div className="slider-inner">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  className="slider-image"
+                  onClick={()=>navigate(item.onClick)}
+                />
+                <p>{item.title}</p>
               </div>
             </li>
           ))}
