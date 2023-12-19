@@ -30,9 +30,6 @@ const Routers = ({ isSearching, setIsSearching }) => {
             <Home isSearching={isSearching} setIsSearching={setIsSearching} />
           }
         />
-        {/* <Route path="/Men" element={<Men />} />
-      <Route path="/Women" element={<Women />} /> */}
-        {/* <Route path="/MobileCovers" element={<MobileCover />} /> */}
         <Route path="/:searchTerm" element={<SearchDisplay />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -46,7 +43,7 @@ const Routers = ({ isSearching, setIsSearching }) => {
         <Route path="/:gender/:category" element={<CategoryProduct />} />
         <Route path="/account/orders/ordersucces" element={<OrderSuccess />} />
         <Route path="/men" element={<Men />} />
-        <Route path="/Women" element={<Women />} />
+        <Route path="/women" element={<Women />} />
         <Route path="/winterwear" element={<WinterWear />} />
         <Route path="/plus-size" element={<PlusSize />} />
         <Route path="*" element={<Error404 />} />

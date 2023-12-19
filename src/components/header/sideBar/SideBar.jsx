@@ -39,7 +39,7 @@ const SideBar = ({ handleMenuBarClick }) => {
           <Link to="/Men" className="link">
             Men
           </Link>
-          <Link to="/Women" className="link">
+          <Link to="/women" className="link">
             Women
           </Link>
         </div>
