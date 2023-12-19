@@ -359,3 +359,16 @@ opacity: 0.5;
   border-radius: 50px;
   cursor: pointer;
 }
+.card-row{
+  align-items: center
+}
+.image-gallery{
+min-width: 250px;
+}
+@media only screen and (max-width: 360px)
+{
+  .card-row{
+    align-items: start;
+    justify-content: space-around;
+  }
+}

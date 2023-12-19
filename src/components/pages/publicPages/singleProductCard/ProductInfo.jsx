@@ -192,7 +192,7 @@ const ProductInfo = ({ productDetails }) => {
   // console.log("product", productDetails);
   return (
     <div className="productinfo-wrapper">
-      <Row>
+      <Row className="card-row">
         <Col md={6} sm={12} className="product-gallery">
           <div>
             <ImageGallery
