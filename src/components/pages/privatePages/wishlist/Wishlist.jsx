@@ -149,6 +149,7 @@ const Wishlist = () => {
                   alt={item.products.name}
                   fluid
                   className="wishlist-product-image"
+                  onClick={()=>navigate(`/product/${item.products._id}`)}
                 />
                 <div className="wishlist-product-details">
                   <h3 className="wishlist-product-brand-name">Bewakoof®</h3>
