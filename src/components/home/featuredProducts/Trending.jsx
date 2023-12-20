@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../../productcard/ProductCard";
 import axios from "axios";
+import { RingLoader } from "react-spinners";
 
 const Trending = () => {
   const [trendingProducts, settrendingProducts] = useState([]);
@@ -25,6 +26,24 @@ const Trending = () => {
       console.log(error);
     }
   };
+  if (trendingProducts.length === 0) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <RingLoader
+          color={"#FEC001"}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+          size={100}
+        />
+      </div>
+    );
+  }
   return (
     <div>
       <ProductCard products={trendingProducts} />

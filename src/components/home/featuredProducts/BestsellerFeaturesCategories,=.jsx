@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../../productcard/ProductCard";
 import axios from "axios";
+import { RingLoader } from "react-spinners";
 
 const BestsellerFeaturesCategories = () => {
   const [bestsellersProducts, setBestsellersProducts] = useState([]);
@@ -27,9 +28,29 @@ const BestsellerFeaturesCategories = () => {
       console.log(e);
     }
   };
-  return <div>
-    <ProductCard products={bestsellersProducts}/>
-  </div>;
+  if (bestsellersProducts.length === 0) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <RingLoader
+          color={"#FEC001"}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+          size={100}
+        />
+      </div>
+    );
+  }
+  return (
+    <div>
+      <ProductCard products={bestsellersProducts} />
+    </div>
+  );
 };
 
 export default BestsellerFeaturesCategories;
