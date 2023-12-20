@@ -36,9 +36,9 @@ const Footer = () => {
             <Col sm={4} md={3} className="menu-section">
               <span className="footer-title">CUSTOMER SERVICE</span>
               <ul>
-                <li>
+                {/* <li>
                   <Link to="/">Contact us</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/account/orders">Track Order</Link>
                 </li>
@@ -71,32 +71,32 @@ const Footer = () => {
               <span className="footer-title">CONNECT WITH US</span>
               <ul>
                 <li>
-                  <Link to="/">
+                  <Link to="https://www.facebook.com/bewakoofcom">
                     <FacebookIcon />
                     <span>4.7M People Like this</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/">
+                  <Link to="https://www.instagram.com/bewakoofofficial/">
                     <InstagramIcon />
                     <span>10.7M People Like this</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/">
+                  <Link to="https://twitter.com/bewakoof">
                     <TwitterIcon />
                     <span>5.7M People Like this</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/">
+                  <Link to="https://www.pinterest.com/bewakoof/">
                     <PinterestIcon />
                     <span>2.7M People Like this</span>
                   </Link>
                 </li>
               </ul>
             </Col>
-            <Col sm={4} md={3} className="menu-section">
+            {/* <Col sm={4} md={3} className="menu-section">
               <span className="footer-title">CONNECT WITH US</span>
               <ul>
                 <li>
@@ -110,7 +110,7 @@ const Footer = () => {
                   </form>
                 </li>
               </ul>
-            </Col>
+            </Col> */}
           </Row>
         </section>
         <section className="payment-gateway">
@@ -146,16 +146,7 @@ const Footer = () => {
               <span className="footer-title">100% SECURE PAYMENT</span>
               <Image src={securePaymentsImg}fluid  alt="securePaymentsImg"/>
 
-              {/* <img src="src\components\footer\winterwear.png" alt="android"/> */}
-              {/* <picture>
-
-              <source srcset="./winterwear.png" type="image/webp"/>
-
-              <source srcset="./winterwear.png" type="image/jpeg"/>
-
-              <img src="./winterwear.png"/>
-
-              </picture> */}
+             
             </Col>
           </Row>
         </section>
