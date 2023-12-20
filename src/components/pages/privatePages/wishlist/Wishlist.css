@@ -20,6 +20,7 @@
 }
 .wishlist-product-image {
   width: 200px;
+  cursor: pointer;
 }
 .wishlist-product-details {
   width: 200px;
