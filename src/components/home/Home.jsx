@@ -38,7 +38,7 @@ const Home = ({ isSearching, setIsSearching }) => {
         <TrendingCategoriesMen />
         <TrendingCategoriesWomen/>
         <Bestsellers />
-        <div className="tribe-vote-banners">
+        {/* <div className="tribe-vote-banners">
           <Image
             src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1672040129.jpg"
             fluid
@@ -47,7 +47,7 @@ const Home = ({ isSearching, setIsSearching }) => {
             src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1669022420.jpg"
             fluid
           />
-        </div>
+        </div> */}
       </>
     </div>
   );
