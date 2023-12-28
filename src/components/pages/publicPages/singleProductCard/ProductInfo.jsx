@@ -103,7 +103,7 @@ const ProductInfo = ({ productDetails }) => {
         ToasterMessage('info','Please select a size');
         return;
       }
-      if (accessToken === null) {
+      if (!accessToken) {
         navigate("/login");
       } else {
         const response = await axios.patch(
