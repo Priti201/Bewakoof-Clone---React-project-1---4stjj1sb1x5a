@@ -92,12 +92,17 @@ const ProductInfo = ({ productDetails }) => {
   // console.log(wishlistItems);
   // fetchingWishlistProducts();
   const handleAddItemToCart = async () => {
-    if(size==='')
-    {
-      ToasterMessage('info','Please select a size');
-      return;
-    }
+    // if(!accessToken)
+    // {
+    //   navigate('/login');
+    // }
+  
     try {
+      if(size==='')
+      {
+        ToasterMessage('info','Please select a size');
+        return;
+      }
       if (accessToken === null) {
         navigate("/login");
       } else {
@@ -126,7 +131,7 @@ const ProductInfo = ({ productDetails }) => {
         }
       }
     } catch (error) {
-      ToasterMessage("error", "Something went wrong");
+      ToasterMessage("error", error.response.data.message);
     }
   };
 
