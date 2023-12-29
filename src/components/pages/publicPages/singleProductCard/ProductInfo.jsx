@@ -31,6 +31,7 @@ const ProductInfo = ({ productDetails }) => {
   const [wishlisted, setWishlisted] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
   const [size, setSize]= useState('');
+  const [style, setStyle] = useState(false);
   // const {fetchingWishlistProducts} = wishlistProductsContext();
 
   const [wishlistItems, setWishlistItems] = useState(null);
@@ -42,8 +43,12 @@ const ProductInfo = ({ productDetails }) => {
   const { cartItems, setCartItems } = useCartItems();
 
   useEffect(() => {
-    fetchingWishlistProducts();
+    if(accessToken)
+    {
+      fetchingWishlistProducts();
+    }
   }, [wishlisted]);
+
 
   // useEffect(() => {
   //   fetchingCartProducts();
@@ -189,7 +194,7 @@ const ProductInfo = ({ productDetails }) => {
     }
   };
 
-  const handleSizeChange = (size)=>{
+  const handleSizeChange = (size, e)=>{
     // console.log(size);
     setSize(size);
   }
@@ -248,7 +253,10 @@ const ProductInfo = ({ productDetails }) => {
             <div className="size-container">
               {productDetails?.size?.map((item, i) => {
                 return (
-                  <div key={i} className="size-item" onClick={()=>handleSizeChange(item)}>
+                  <div key={i} className="size-item" 
+                  onClick={(e)=>handleSizeChange(item, e)} 
+                  // style={size ? {backgroundColor:'yellow'} : {backgroundColor:"white"}}
+                  >
                     {item}
                   </div>
                 );
@@ -258,13 +266,11 @@ const ProductInfo = ({ productDetails }) => {
               {cartItems
                 ?.map((item) => item.product?._id)
                 .includes(productDetails?._id) ? (
-                <Button className="add-to-bag">
+                <Button className="add-to-bag"onClick={() => {
+                  navigate("/cart");
+                }}>
                   <LocalMallTwoToneIcon />
-                  <span
-                    onClick={() => {
-                      navigate("/cart");
-                    }}
-                  >
+                  <span >
                     GO TO BAG
                   </span>
                 </Button>

@@ -16,7 +16,10 @@ const App = () => {
   const{cartItemsNumber, setCartItemsNumber} = useCartItemsNumber();
 
   useEffect(()=>{
-    fetchingCart();
+    if(accessToken)
+    {
+      fetchingCart();
+    }
   },[]);
 
   const fetchingCart =async () => {
