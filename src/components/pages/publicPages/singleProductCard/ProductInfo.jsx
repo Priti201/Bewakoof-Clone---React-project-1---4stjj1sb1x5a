@@ -142,7 +142,7 @@ const ProductInfo = ({ productDetails }) => {
 
   const handleAddToWishlist = async () => {
     try {
-      if (accessToken === null) {
+      if (!accessToken) {
         navigate("/login");
       } else {
         const response = await axios.patch(
