@@ -32,7 +32,7 @@ const CartProductCard = ({ item }) => {
             className="cart-item-image"
             onClick={handleImageClick}
             loading="lazy"
-            alt={item?.product?.displayImage}
+            alt={item?.product?.name}
           />
         </Col>
       </Row>
