@@ -2,6 +2,10 @@
   width: 100%;
   display: flex;
   height: calc(100vh-509px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .footer-wrapper {
     font-size: 11px;
