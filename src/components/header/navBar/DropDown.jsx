@@ -105,9 +105,9 @@ const DropDown = ({ gender }) => {
       </Dropdown.Toggle>
       <Dropdown.Menu className="categories-dropdown-menu">
         {gender === "Men"
-          ? menCategories.map((category) => {
+          ? menCategories.map((category, index) => {
               return (
-                <Dropdown.Item className="categories-dropdown-item">
+                <Dropdown.Item className="categories-dropdown-item" key={index}>
                   <Link
                     to={`/${gender}/${category}`}
                     className="categories-dropdown-link"
@@ -117,9 +117,9 @@ const DropDown = ({ gender }) => {
                 </Dropdown.Item>
               );
             })
-          : womenCategories.map((category) => {
+          : womenCategories.map((category, index) => {
               return (
-                <Dropdown.Item className="categories-dropdown-item">
+                <Dropdown.Item className="categories-dropdown-item" key={index}>
                   <Link
                     to={`/${gender}/${category}`}
                     className="categories-dropdown-link"
