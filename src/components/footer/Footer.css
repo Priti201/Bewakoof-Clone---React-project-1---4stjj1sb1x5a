@@ -1,6 +1,7 @@
 .footer-wrapper {
   width: 100%;
   display: flex;
+  height: calc(100vh-509px);
 }
 .footer-wrapper {
     font-size: 11px;

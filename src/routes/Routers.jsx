@@ -23,10 +23,11 @@ import SearchDisplay from "../components/header/navBar/SearchDisplay";
 import NewArrivals from "../components/home/featuredProducts/NewArrivals";
 import BestsellerFeaturesCategories from "../components/home/featuredProducts/BestsellerFeaturesCategories,=";
 import Trending from "../components/home/featuredProducts/Trending";
+import Footer from "../components/footer/Footer";
 
 const Routers = ({ isSearching, setIsSearching }) => {
   return (
-    <div>
+    <div className="routes-container">
       <Routes>
         <Route
           path="/"
