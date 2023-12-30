@@ -197,6 +197,16 @@ const ProductInfo = ({ productDetails }) => {
     // console.log(size);
     setSize(size);
   }
+  const handleGoToBag = ()=>{
+    if(accessToken)
+    {
+      navigate('/cart');
+    }
+    else
+    {
+      navigate('/login')
+    }
+  }
   // console.log('accessToken', accessToken);
   // console.log("product", productDetails);
   return (
@@ -263,12 +273,10 @@ const ProductInfo = ({ productDetails }) => {
               })}
             </div>
             <div className="button-wrapper">
-              {cartItems
+              {accessToken && cartItems
                 ?.map((item) => item.product?._id)
                 .includes(productDetails?._id) ? (
-                <Button className="add-to-bag"onClick={() => {
-                  navigate("/cart");
-                }}>
+                <Button className="add-to-bag"onClick={handleGoToBag}>
                   <LocalMallTwoToneIcon />
                   <span >
                     GO TO BAG
