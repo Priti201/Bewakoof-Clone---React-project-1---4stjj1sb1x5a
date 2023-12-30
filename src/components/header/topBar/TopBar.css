@@ -23,7 +23,7 @@
     display: flex;
     gap: 20px;
     list-style-type: none;
-    cursor: pointer;
+    cursor:default;
     margin: 0;
 }
 /* .right-items{
