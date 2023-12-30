@@ -185,6 +185,11 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.size-border{
+  border: 2px solid rgb(4, 192, 255) !important;
+  background-color: black;
+  color: white;
+}
 .button-wrapper {
   display: flex;
 }
