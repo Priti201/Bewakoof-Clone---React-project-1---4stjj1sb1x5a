@@ -17,6 +17,9 @@
 }
 
 /* cart items product card */
+.cart-item-image{
+  cursor: pointer;
+}
 .cart-item-conatiner {
   width: 95%;
   border: 1px solid #e3d5d6;
@@ -46,9 +49,11 @@
 .cart-item-name {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 .cart-item-name:hover {
   color: black;
+  font-weight: 500;
 }
 .cart-item-price-container {
   display: flex;
