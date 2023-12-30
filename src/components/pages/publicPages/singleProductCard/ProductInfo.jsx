@@ -211,6 +211,7 @@ const ProductInfo = ({ productDetails }) => {
               showPlayButton={false}
               slideOnThumbnailOver={true}
               showFullscreenButton={false}
+              loading="lazy"
             />
           </div>
         </Col>

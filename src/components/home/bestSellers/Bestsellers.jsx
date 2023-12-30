@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import "./Bestsellers.css";
-import { Container, Image } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import Card from "../../card/Card";
-import ProductCard from "../../productcard/ProductCard";
 
 const Bestsellers = () => {
   const [bestsellersProducts, setBestsellersProducts] = useState([]);
@@ -35,22 +34,7 @@ const Bestsellers = () => {
   return (
     <div>
       <h3 className="bestsellers-title">BESTSELLERS</h3>
-      {/* <ul className="bestsellers-container">
-        {bestsellersProducts.map((product) => (
-         <li className="bestsellers-single-product-container">
-        
-           <Image
-             src={product.displayImage}
-             alt={product.name}
-             className="bestsellers-image"
-             fluid
-           />
-         
-       </li>
-        ))}
-      </ul> */}
       <Container className="bestsellers-container" fluid>
-      {/* <ProductCard products={bestsellersProducts}/> */}
       {
         bestsellersProducts.map((product, index)=>{
           return(

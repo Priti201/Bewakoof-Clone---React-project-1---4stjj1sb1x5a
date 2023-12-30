@@ -51,6 +51,7 @@ const NavBar = ({ isSearching, setIsSearching }) => {
               src="https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg"
               alt="logo"
               className="logo"
+              loading="lazy"
             />
           </Link>
           
@@ -65,6 +66,7 @@ const NavBar = ({ isSearching, setIsSearching }) => {
             <img
               src="https://images.bewakoof.com/web/ic-web-head-bwk-primary-logo-eyes.svg"
               alt="smallscreen-logo"
+              loading="lazy"
             />
           </Link>
         </div>

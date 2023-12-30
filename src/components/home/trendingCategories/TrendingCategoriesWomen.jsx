@@ -29,6 +29,7 @@ const TrendingCategoriesWomen = () => {
                 className="trending-categories-image"
                 fluid
                 onClick={() => navigate(`/Women/${key}`)}
+                loading="lazy"
               />
             </div>
           </li>

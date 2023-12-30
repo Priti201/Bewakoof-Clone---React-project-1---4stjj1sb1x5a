@@ -18,6 +18,8 @@ const OrderSuccess = () => {
       <Image
         src="https://bewakoof-clone-react-project-1-ac0ogzjs0uot.vercel.app/static/media/order-success-bag.84b2b0e106ea3cfe71c2.gif"
         className="order-success-img"
+        loading="lazy"
+        alt="order-successfull"
       />
       <div className="order-succes-text">
         <h3>Thank you for shopping!</h3>

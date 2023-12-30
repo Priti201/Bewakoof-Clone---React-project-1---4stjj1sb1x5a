@@ -9,6 +9,8 @@ const ImageAndWlc = () => {
         <Image
           src="https://images.bewakoof.com/web/group-19-1617704502.png"
           fluid
+          loading="lazy"
+          alt="login-image"
         />
       </div>
     </div>

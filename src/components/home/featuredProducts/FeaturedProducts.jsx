@@ -36,16 +36,7 @@ const FeaturedProducts = () => {
   return (
     <div className="features-wrapper">
       <div className="features-container">
-        {/* <ul className="features-list">
-          {Object.entries(featuredProducts).map(([key, value]) => (
-            <li className="featured-product" key={key}>
-              <div className="slider-inner">
-                <Image src={value} alt={key} className="slider-image" />
-                <p>{key}</p>
-              </div>
-            </li>
-          ))}
-        </ul> */}
+       
         <ul className="features-list">
           {featuredProducts.map((item) => (
             <li className="featured-product" key={item.title}>
@@ -55,6 +46,7 @@ const FeaturedProducts = () => {
                   alt={item.title}
                   className="slider-image"
                   onClick={()=>navigate(item.onClick)}
+                  loading="lazy"
                 />
                 <p>{item.title}</p>
               </div>

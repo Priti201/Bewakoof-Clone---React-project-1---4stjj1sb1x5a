@@ -25,11 +25,8 @@ const Cart = () => {
   // }, []);
 
   const { accessToken } = useAccessToken();
-  const {cartItems, setCartItems,totalPrice, setTotalPrice}= useCartItems();
+  const { cartItems, setCartItems, totalPrice, setTotalPrice } = useCartItems();
   const { cartItemsNumber, setCartItemsNumber } = useCartItemsNumber();
-
- 
-  
 
   const handleRemoveFromCart = async (id) => {
     // console.log(id);
@@ -50,7 +47,7 @@ const Cart = () => {
         setCartItems(response.data.data.items);
 
         // decreasing cart number in the navbar cart icon
-        setCartItemsNumber(response.data.data.items.length)
+        setCartItemsNumber(response.data.data.items.length);
       }
     } catch (error) {
       ToasterMessage("error", error.response.data.message);
@@ -103,9 +100,8 @@ const Cart = () => {
       ToasterMessage("error", error.message);
     }
   };
-  if(accessToken === '')
-  {
-    navigate('/login');
+  if (accessToken === "") {
+    navigate("/login");
     return;
   }
 
@@ -132,6 +128,8 @@ const Cart = () => {
                     fluid
                     width="30px"
                     className="cart-car-img"
+                    loading="lazy"
+                    alt="shipping-truck"
                   />
                   &nbsp;&nbsp;&nbsp;
                   <span className="cart-free-delivery-text">
@@ -214,15 +212,27 @@ const Cart = () => {
                     </div>
                     <div className="trustBaggeContainer ">
                       <div>
-                        <Image src="https://images.bewakoof.com/web/cart-badge-trust.svg" />
+                        <Image
+                          src="https://images.bewakoof.com/web/cart-badge-trust.svg"
+                          loading="lazy"
+                          alt="badge-trust"
+                        />
                         <p>100% SECURE PAYMENTS</p>
                       </div>
                       <div>
-                        <Image src="https://images.bewakoof.com/web/cart-easy-return.svg" />
+                        <Image
+                          src="https://images.bewakoof.com/web/cart-easy-return.svg"
+                          loading="lazy"
+                          alt="return"
+                        />
                         <p>EASY RETURNS & QUICK REFUNDS</p>
                       </div>
                       <div>
-                        <Image src="https://images.bewakoof.com/web/quality-check.svg" />
+                        <Image
+                          src="https://images.bewakoof.com/web/quality-check.svg"
+                          loading="lazy"
+                          alt="quality-check"
+                        />
                         <p>QUALITY ASSURANCE</p>
                       </div>
                     </div>
@@ -243,6 +253,7 @@ const Cart = () => {
             alt="empty-cart"
             fluid
             width="15%"
+            loading="lazy"
           />
           <div className="empty-list-title">Nothing in the bag</div>
           <div className="empty-list-subtitle">

@@ -26,6 +26,7 @@ const Card = ({product}) => {
         onClick={handleImageClick}
         className='product-card-img'
         loading='lazy'
+        alt={product?.name}
         />
        </div>
        <div className="product-card-detail">

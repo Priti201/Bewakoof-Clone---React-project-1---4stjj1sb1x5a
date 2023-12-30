@@ -97,6 +97,8 @@ const SingleOrder = () => {
                   src={orderDetails?.items[0]?.product.displayImage}
                   className="single-order-img"
                   onClick={()=>navigate(`/product/${orderDetails?.items[0]?.product._id}`)}
+                  loading="lazy"
+                  alt={orderDetails?.items[0]?.product.name}
                 />
                 <div className="single-order-details">
                   <h3 className="single-order-name">

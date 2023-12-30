@@ -22,6 +22,8 @@ const ProductCard = ({ products }) => {
         <Image
           src="https://www.shuvautsav.com/frontend/dist/images/logo/no-item-found-here.png"
           fluid
+          loading="lazy"
+          alt="no-item-found"
         />
       </Container>
     );

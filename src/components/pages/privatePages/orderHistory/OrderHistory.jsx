@@ -70,6 +70,8 @@ const OrderHistory = () => {
                       onClick={() =>
                         navigate(`/product/${item.order.items[0].product._id}`)
                       }
+                      loading="lazy"
+                      alt={item.order.items[0].product.name}
                     />
 
                     <div className="order-item-details-container">
@@ -94,6 +96,7 @@ const OrderHistory = () => {
               alt="no-orders"
               fluid
               className="empty-orders-image"
+              loading="lazy"
             />
             <Button onClick={() => navigate("/")} className="empty-orders-btn">
               Continue Shopping

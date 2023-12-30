@@ -150,6 +150,7 @@ const Wishlist = () => {
                   fluid
                   className="wishlist-product-image"
                   onClick={()=>navigate(`/product/${item.products._id}`)}
+                  loading="lazy"
                 />
                 <div className="wishlist-product-details">
                   <h3 className="wishlist-product-brand-name">Bewakoof®</h3>
@@ -196,6 +197,7 @@ const Wishlist = () => {
           alt="empty-cart"
           fluid
           width="10%"
+          loading="lazy"
         />
         <div className="empty-wishlist-title">Hey! Your wishlist is empty.</div>
         <div className="empty-wishlist-subtitle">

@@ -135,16 +135,16 @@ const Footer = () => {
               <span className="footer-title">DOWNLOAD THE APP</span>
               <div className="download-app">
                 <Link to="https://play.google.com/store/apps/details?id=com.beyoungapp&hl=en&gl=US&pli=1">
-                  <Image src={appAndroidStore}  alt="appAndroidStore"fluid />
+                  <Image src={appAndroidStore}  alt="appAndroidStore"fluid  loading="lazy"/>
                 </Link>
                 <Link to="https://www.apple.com/app-store/">
-                  <Image src={appIosStore} fluid alt="appIosStore" />
+                  <Image src={appIosStore} fluid alt="appIosStore" loading="lazy"/>
                 </Link>
               </div>
             </Col>
             <Col sm={4} md={3} className="menu-section">
               <span className="footer-title">100% SECURE PAYMENT</span>
-              <Image src={securePaymentsImg}fluid  alt="securePaymentsImg"/>
+              <Image src={securePaymentsImg}fluid  alt="securePaymentsImg" loading="lazy"/>
 
              
             </Col>

@@ -5,13 +5,6 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import { Image } from "react-bootstrap";
 
 const Slider = () => {
-  // const images = [
-  //   "https://images.bewakoof.com/uploads/grid/app/ik-1x1-new--1--1699607681.jpg",
-  //   "https://images.bewakoof.com/uploads/grid/app/NEW-1x1-Joggers-1699357840.jpg",
-  //   "https://images.bewakoof.com/uploads/grid/app/NEW-1x1-OversizedSweatshirts-common-1699594711.jpg",
-  //   "https://images.bewakoof.com/uploads/grid/app/Women-Short-Tops-1x1-Banner-1699634146.jpg",
-  //   "https://images.bewakoof.com/uploads/grid/app/NEW-1x1-KnitPerfection-sweater-common-1699625976.jpg",
-  // ];
 
   const handleDragStart = (e) => {
     e.preventDefault();
@@ -50,9 +43,6 @@ const Slider = () => {
         "https://images.bewakoof.com/uploads/grid/app/NEW-1x1-KnitPerfection-sweater-common-1699625976.jpg",
     },
   ];
-  function Tile({ onClick }) {
-    return <div onClick={onClick} tabIndex={0} role="button" />;
-  }
   return (
     <div className="slider-container">
       <AliceCarousel
@@ -64,6 +54,8 @@ const Slider = () => {
               onDragStart={handleDragStart}
               role="presentation"
               className="slider-images"
+              loading="lazy"
+              alt="offer-banner"
             />
           </div>
         ))}
