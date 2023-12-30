@@ -31,7 +31,6 @@ const ProductInfo = ({ productDetails }) => {
   const [wishlisted, setWishlisted] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
   const [size, setSize]= useState('');
-  const [style, setStyle] = useState(false);
   // const {fetchingWishlistProducts} = wishlistProductsContext();
 
   const [wishlistItems, setWishlistItems] = useState(null);
@@ -253,7 +252,7 @@ const ProductInfo = ({ productDetails }) => {
             <div className="size-container">
               {productDetails?.size?.map((item, i) => {
                 return (
-                  <div key={i} className="size-item" 
+                  <div key={i} className={`size-item ${size === item ? 'size-border' : ''}`} 
                   onClick={(e)=>handleSizeChange(item, e)} 
                   // style={size ? {backgroundColor:'yellow'} : {backgroundColor:"white"}}
                   >
