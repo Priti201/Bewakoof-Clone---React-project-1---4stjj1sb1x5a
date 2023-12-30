@@ -24,7 +24,7 @@ const Bestsellers = () => {
           },
         }
       );
-      console.log(response);
+      // console.log(response);
       if (response.status === 200) {
         setBestsellersProducts(response.data.data);
       }
@@ -52,9 +52,9 @@ const Bestsellers = () => {
       <Container className="bestsellers-container" fluid>
       {/* <ProductCard products={bestsellersProducts}/> */}
       {
-        bestsellersProducts.map((product)=>{
+        bestsellersProducts.map((product, index)=>{
           return(
-            <Card product={product}/>
+            <Card product={product} key={index}/>
           )
         })
       }
