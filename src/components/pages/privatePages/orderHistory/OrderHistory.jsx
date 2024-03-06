@@ -65,18 +65,18 @@ const OrderHistory = () => {
                   </h3>
                   <div className="order-item-container" onClick={()=>navigate(`/account/orders/${item.order._id}`)}>
                     <Image
-                      src={item.order.items[0].product.displayImage}
+                      src={item.order.items[0].product?.displayImage}
                       className="order-item-image"
                       onClick={() =>
                         navigate(`/product/${item.order.items[0].product._id}`)
                       }
                       loading="lazy"
-                      alt={item.order.items[0].product.name}
+                      alt={item?.order.items[0].product?.name}
                     />
 
                     <div className="order-item-details-container">
                       <h3 className="order-item-name">
-                        {item.order.items[0].product.name}
+                        {item.order.items[0].product?.name}
                       </h3>
                       <h3 className="order-item-size">Size: S</h3>
                       <p className="order-item-status">ORDER CONFIRMED</p>
